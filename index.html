@@ -263,6 +263,20 @@ main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .dist .portrait .crest{display:none}
 .dist span b.bossname{font-size:12.5px;color:var(--city,#ffd27a);font-weight:700}
 #walkCard{margin-top:14px}
+
+/* R26: Story of the Day */
+.steaser .sic{font-size:30px;width:40px;text-align:center;flex:none}
+.storymodal .shead{display:flex;gap:10px;align-items:center}
+.syr{display:inline-flex;align-items:center;justify-content:center;min-width:52px;padding:4px 8px;border-radius:999px;background:linear-gradient(135deg,#ffd27a33,#ff9a3c22);border:1px solid #ffd27a66;color:#ffd27a;font-weight:800;font-size:13px}
+.stag{font-size:12px;color:var(--mut);letter-spacing:.02em;text-transform:uppercase}
+.sbody{margin-top:4px;font-size:16.5px;line-height:1.65}
+.matebox{margin-top:14px;padding:12px;border:1px solid rgba(255,210,122,.25);border-radius:14px;background:rgba(255,210,122,.05)}
+.matebox .sboard,.matebox .bwrap{width:min(280px,70vw);margin:10px auto 0;aspect-ratio:1}
+.sarch{max-height:55vh;overflow:auto}
+.srow{width:100%;gap:12px}.srow.seen{opacity:.85}
+.srow .syr{min-width:48px;font-size:12px}
+#storyBtn{border:1px solid rgba(255,210,122,.2)}
+@media(max-width:420px){.matebox .sboard,.matebox .bwrap{width:min(260px,86vw)}}
 </style>
 <style id="piecescss">.pwK{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgdmlld0JveD0iMCAwIDQ1IDQ1Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMTEuNjNWNk0yMCA4aDUiLz48cGF0aCBmaWxsPSIjZmZmIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMjVzNC41LTcuNSAzLTEwLjVjMCAwLTEtMi41LTMtMi41cy0zIDIuNS0zIDIuNWMtMS41IDMgMyAxMC41IDMgMTAuNSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMS41IDM3YzUuNSAzLjUgMTUuNSAzLjUgMjEgMHYtN3M5LTQuNSA2LTEwLjVjLTQtNi41LTEzLjUtMy41LTE2IDRWMjd2LTMuNWMtMy41LTcuNS0xMy0xMC41LTE2LTQtMyA2IDUgMTAgNSAxMHoiLz48cGF0aCBkPSJNMTEuNSAzMGM1LjUtMyAxNS41LTMgMjEgMG0tMjEgMy41YzUuNS0zIDE1LjUtMyAyMSAwbS0yMSAzLjVjNS41LTMgMTUuNS0zIDIxIDAiLz48L2c+PC9zdmc+)}
 .pwQ{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjQ1IiB2aWV3Qm94PSIwIDAgNDUgNDUiPjxnIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBkPSJNOCAxMmEyIDIgMCAxIDEtNCAwIDIgMiAwIDEgMSA0IDBtMTYuNS00LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTQxIDEyYTIgMiAwIDEgMS00IDAgMiAyIDAgMSAxIDQgME0xNiA4LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTMzIDlhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwIi8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzguNS0xLjUgMjEtMS41IDI3IDBsMi0xMi03IDExVjExbC01LjUgMTMuNS0zLTE1LTMgMTUtNS41LTE0VjI1TDcgMTR6Ii8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzAgMiAxLjUgMiAyLjUgNCAxIDEuNSAxIDEgLjUgMy41LTEuNSAxLTEuNSAyLjUtMS41IDIuNS0xLjUgMS41LjUgMi41LjUgMi41IDYuNSAxIDE2LjUgMSAyMyAwIDAgMCAxLjUtMSAwLTIuNSAwIDAgLjUtMS41LTEtMi41LS41LTIuNS0uNS0yIC41LTMuNSAxLTIgMi41LTIgMi41LTQtOC41LTEuNS0xOC41LTEuNS0yNyAweiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0xMS41IDMwYzMuNS0xIDE4LjUtMSAyMiAwTTEyIDMzLjVjNi0xIDE1LTEgMjEgMCIvPjwvZz48L3N2Zz4=)}
@@ -5024,5 +5038,165 @@ function openCampaign(){engineCancel&&engineCancel();setActivity('campaign');
 function claimCh(i){if(!campDone(i)||acad('camp')['c'+i])return;acad('camp')['c'+i]=today();save();addXP(100,'campaign chapter');SND.win();confetti(120);openCampaign()}
 // polish: the Academy card replaces the separate Pattern Academy card on the map (Pattern Academy lives inside the Academy)
 const _renderMap8=renderMap;renderMap=function(){_renderMap8();const p=$('patBtn');if(p)p.remove()};
+renderMap();
+// ================= v8 R26: Story of the Day — curated sourced vignettes =================
+// Facts checked against the linked Wikipedia articles. Mate FENs replayed with
+// python-chess; mating moves confirmed legal and delivering checkmate (Stockfish
+// depth 14 finds mate-in-1 on each). GOTC also has Ba3# as an alternate mate.
+const STORIES=[
+{id:'scachs',yr:1475,ic:'📜',tag:'Oldest game',t:'The poem that saved a game',
+ text:"Around 1475 in Valencia, Francesc de Castellví and Narcís Vinyoles played what is widely regarded as the earliest recorded game of modern chess. The moves survive because they were woven into a Catalan love poem, <i>Scachs d'amor</i> (\"Chess of Love\"). The opening they used — 1.e4 d5 — is today's Scandinavian Defence.",
+ src:['Scachs d\'amor','https://en.wikipedia.org/wiki/Scachs_d%27amor'],src2:['Scandinavian Defense','https://en.wikipedia.org/wiki/Scandinavian_Defense']},
+{id:'lucena',yr:1497,ic:'📚',tag:'First printed book',t:'Lucena\'s printed lessons',
+ text:"In 1497 the Castilian Luis Ramírez de Lucena published <i>Repetición de Amores e Arte de Axedrez</i>, one of the oldest surviving printed chess books. It already describes the smothered mate. The famous \"Lucena position\" in rook endgames is actually misnamed — it does not appear in his book; the earliest known discussion is in Alessandro Salvio's <i>Il Puttino</i> (1634).",
+ src:['Smothered mate','https://en.wikipedia.org/wiki/Smothered_mate'],src2:['Lucena position','https://en.wikipedia.org/wiki/Lucena_position']},
+{id:'ruy',yr:1561,ic:'✝️',tag:'Opening history',t:'A priest names the Spanish Torture',
+ text:"Ruy López de Segura, a 16th-century Spanish priest, analysed 1.e4 e5 2.Nf3 Nc6 3.Bb5 in his 1561 book <i>Libro del Axedrez</i>. The move already appears in the Göttingen manuscript of around 1490. Players later nicknamed the opening \"the Spanish Torture\" for how hard Black finds equality. In 2000 Vladimir Kramnik used its Berlin Defence to hold Garry Kasparov and take the world title.",
+ src:['Ruy Lopez','https://en.wikipedia.org/wiki/Ruy_Lopez']},
+{id:'greco',yr:1620,ic:'🇮🇹',tag:'Early master',t:'Greco, the first chess star',
+ text:"In the early 1600s the Italian Gioachino Greco wrote manuscripts full of short, brilliant games — many in the Giuoco Piano (\"quiet game\"), today's Italian Game. His examples of attacks on f7 are among the oldest recorded games still studied, and his work stayed popular across Europe for centuries.",
+ src:['Gioachino Greco','https://en.wikipedia.org/wiki/Gioachino_Greco']},
+{id:'turk',yr:1770,ic:'🤖',tag:'Automaton',t:'The Mechanical Turk',
+ text:"In 1770 Wolfgang von Kempelen unveiled a life-sized chess-playing \"automaton\" at Schönbrunn Palace for Empress Maria Theresa. Dressed as an Ottoman sorcerer, the Turk beat nobles and later even Napoleon and Benjamin Franklin on its tours. Inside the cabinet a human master moved the pieces with levers — a brilliant hoax that fooled Europe for 84 years until the machine burned in 1854.",
+ src:['Mechanical Turk','https://en.wikipedia.org/wiki/Mechanical_Turk']},
+{id:'philidor',yr:1749,ic:'🎼',tag:'Strategy',t:'Pawns are the soul of chess',
+ text:"François-André Danican Philidor — also a celebrated opera composer — published <i>Analyse du jeu des Échecs</i> in 1749. It went through dozens of editions. He taught that pawns are the soul of chess, and his drawing method in rook endgames is still called the Philidor position.",
+ src:['François-André Danican Philidor','https://en.wikipedia.org/wiki/Fran%C3%A7ois-Andr%C3%A9_Danican_Philidor']},
+{id:'scotch',yr:1824,ic:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',tag:'Correspondence',t:'Edinburgh beats London by post',
+ text:"The Scotch Game is named after a correspondence match between Edinburgh and London that began in 1824 and lasted until 1828. Moves crossed Britain by mail. The Edinburgh players used 3.d4 and won the match. The opening then faded from top play until Garry Kasparov revived it in his 1990 World Championship match against Anatoly Karpov.",
+ src:['Scotch Game','https://en.wikipedia.org/wiki/Scotch_Game']},
+{id:'french',yr:1834,ic:'🇫🇷',tag:'Correspondence',t:'London vs Paris, by letter',
+ text:"The French Defence got its name from a correspondence match between London and Paris that began in 1834. Moves crossed the Channel by post. The Paris team adopted 1...e6 on the advice of the player Chamouillet and won the game. The idea stuck, and later the opening became a favourite of world-class defenders such as Mikhail Botvinnik and Viktor Korchnoi.",
+ src:['French Defence','https://en.wikipedia.org/wiki/French_Defence']},
+{id:'immortal',yr:1851,ic:'⚔️',tag:'Famous game',t:'The Immortal Game',
+ text:"At the time of the first international tournament (London, 1851), Adolf Anderssen played a casual game against Lionel Kieseritzky that became known as the Immortal Game. Anderssen sacrificed both rooks, a bishop and his queen before mating — the purest expression of romantic-era attack.",
+ src:['Immortal Game','https://en.wikipedia.org/wiki/Immortal_Game'],
+ fen:'r1bk3r/p2p1pNp/n2B1n2/1p1NP2P/6P1/3P4/P1P1K3/q5b1 w - - 0 23',mate:'d6e7',orient:'w',hint:'Be7#'},
+{id:'london1851',yr:1851,ic:'🏆',tag:'Tournament',t:'The first international tournament',
+ text:"London 1851 was the first international chess tournament. Organised by Howard Staunton around the Great Exhibition, it was won by Adolf Anderssen of Germany. The event established the idea of a world gathering of the strongest players — the ancestor of every modern open and Olympiad.",
+ src:['London 1851 chess tournament','https://en.wikipedia.org/wiki/London_1851_chess_tournament']},
+{id:'evergreen',yr:1852,ic:'🌲',tag:'Famous game',t:'The Evergreen Game',
+ text:"A year after the Immortal Game, Adolf Anderssen beat Jean Dufresne in Berlin in another sacrificial masterpiece. Wilhelm Steinitz later called it the Evergreen Game. The finish — a queen sacrifice and a quiet bishop mate — is still shown to every generation of students.",
+ src:['Evergreen Game','https://en.wikipedia.org/wiki/Evergreen_Game'],
+ fen:'1r3kr1/pbpBnp1p/1b3P2/8/8/B1P2q2/P4PPP/3R2K1 w - - 4 24',mate:'a3e7',orient:'w',hint:'Bxe7#'},
+{id:'opera',yr:1858,ic:'🎭',tag:'Famous game',t:'Morphy at the Opera',
+ text:"In a box at the Paris Opera in 1858, the American Paul Morphy played White against the Duke of Brunswick and Count Isouard, who consulted together. Morphy developed fast, sacrificed a queen, and mated with a rook on the back rank in 17 moves. It remains the model of rapid development — and the \"Opera mate\" pattern is named after its finish.",
+ src:['Opera Game','https://en.wikipedia.org/wiki/Opera_Game'],
+ fen:'1n2kb1r/p4ppp/4q3/4p1B1/4P3/8/PPP2PPP/2KR4 w k - 0 17',mate:'d1d8',orient:'w',hint:'Rd8#'},
+{id:'caro',yr:1886,ic:'🛡️',tag:'Opening history',t:'Caro, Kann — and two champions',
+ text:"The Caro–Kann Defence is named after Horatio Caro and Marcus Kann, who analysed 1.e4 c6 in 1886. Long considered merely solid, it was used in world-championship play by Mikhail Botvinnik in the 1950s and became a lifelong favourite of Anatoly Karpov — proof that patient, sound defence can win at the very top.",
+ src:['Caro–Kann Defence','https://en.wikipedia.org/wiki/Caro%E2%80%93Kann_Defence']},
+{id:'steinitz',yr:1886,ic:'🏛️',tag:'World title',t:'The first official World Champion',
+ text:"In 1886 Wilhelm Steinitz beat Johannes Zukertort to become the first official World Chess Champion. Steinitz argued that attacks only work when the position justifies them — the start of positional chess: weak squares, outposts, pawn structure. The classical title line runs from him to today's champions.",
+ src:['Wilhelm Steinitz','https://en.wikipedia.org/wiki/Wilhelm_Steinitz'],src2:['World Chess Championship','https://en.wikipedia.org/wiki/World_Chess_Championship']},
+{id:'london',yr:1922,ic:'📍',tag:'Opening history',t:'Named after London 1922',
+ text:"The Irish-American master James Mason used the London set-up in the 1880s, but the name comes from the strong London tournament of 1922, where it appeared seven times — including games by Capablanca, Alekhine and Rubinstein. Ding Liren used it to win game 6 of the 2023 World Championship against Ian Nepomniachtchi.",
+ src:['London System','https://en.wikipedia.org/wiki/London_System']},
+{id:'fide',yr:1924,ic:'🌍',tag:'Organisation',t:'FIDE is born in Paris',
+ text:"On 20 July 1924, during an unofficial Chess Olympiad held alongside the Paris Olympics, fifteen delegates founded the Fédération Internationale des Échecs — FIDE. Its motto is <i>Gens una sumus</i> (\"We are one family\"). FIDE governs world championships, Olympiads and the international rating system.",
+ src:['FIDE','https://en.wikipedia.org/wiki/FIDE']},
+{id:'mysystem',yr:1925,ic:'📖',tag:'Idea book',t:'Nimzowitsch and My System',
+ text:"Aron Nimzowitsch's book <i>My System</i>, published in parts from 1925, gave players a vocabulary for strategy: blockade, overprotection, prophylaxis, open files and outposts. His saying that a passed pawn is a criminal \"which should be kept under lock and key\" still explains why you blockade an isolated pawn with a knight.",
+ src:['My System','https://en.wikipedia.org/wiki/My_System']},
+{id:'capablanca',yr:1927,ic:'🇨🇺',tag:'World title',t:'Buenos Aires, 34 games of the QGD',
+ text:"The 1927 World Championship in Buenos Aires between José Raúl Capablanca and Alexander Alekhine lasted 34 games — and the Queen's Gambit Declined was played in almost all of them. Alekhine won the match, ending Capablanca's reign. It remains one of the deepest demonstrations of the QGD at the highest level.",
+ src:['World Chess Championship 1927','https://en.wikipedia.org/wiki/World_Chess_Championship_1927']},
+{id:'slav',yr:1935,ic:'🏰',tag:'Opening history',t:'The Slav at the title table',
+ text:"The Slav Defence takes its name from Slavic masters who developed it, including Alexander Alapin and Milan Vidmar. It became a top-level opening in the 1930s and was played in many games of the two World Championship matches between Alexander Alekhine and Max Euwe in 1935 and 1937.",
+ src:['Slav Defense','https://en.wikipedia.org/wiki/Slav_Defense']},
+{id:'najdorf',yr:1939,ic:'🇦🇷',tag:'Opening history',t:'Najdorf, stranded in Buenos Aires',
+ text:"The Najdorf Variation (5...a6) is named after Miguel Najdorf, a Polish master who was playing at the 1939 Chess Olympiad in Buenos Aires when the Second World War broke out. He stayed in Argentina, became one of the world's leading players, and his favourite line became the most analysed opening in chess — later a main weapon of both Bobby Fischer and Garry Kasparov.",
+ src:['Miguel Najdorf','https://en.wikipedia.org/wiki/Miguel_Najdorf']},
+{id:'gotc',yr:1956,ic:'🌟',tag:'Famous game',t:'A 13-year-old\'s masterpiece',
+ text:"In New York on 17 October 1956, 13-year-old Bobby Fischer beat Donald Byrne in the Rosenwald Memorial. Hans Kmoch in <i>Chess Review</i> dubbed it \"The Game of the Century\". Fischer's queen sacrifice on move 17 and the long mating hunt that followed are still taught as a model of combination play. Fischer became World Champion in 1972.",
+ src:['Game of the Century (chess)','https://en.wikipedia.org/wiki/Game_of_the_Century_(chess)'],
+ fen:'1Q6/5pk1/2p3p1/1p2N2p/1b5P/1bn5/r5P1/2K5 b - - 15 41',mate:'a2c2',orient:'b',hint:'Rc2# (or Ba3#)',alt:['b4a3']},
+{id:'fischer72',yr:1972,ic:'🧊',tag:'World title',t:'Reykjavík and the Cold War match',
+ text:"In 1972 Bobby Fischer beat Boris Spassky in Reykjavík to become the only American-born undisputed World Champion. The match, played at the height of the Cold War, made chess front-page news worldwide. Fischer stopped playing competitive chess soon after and never defended the title.",
+ src:['World Chess Championship 1972','https://en.wikipedia.org/wiki/World_Chess_Championship_1972'],src2:['Bobby Fischer','https://en.wikipedia.org/wiki/Bobby_Fischer']},
+{id:'deepblue',yr:1997,ic:'💻',tag:'Man vs machine',t:'Deep Blue beats Kasparov',
+ text:"In May 1997 IBM's Deep Blue defeated World Champion Garry Kasparov 3½–2½ in a six-game match in New York — the first time a computer won a match against a reigning world champion under standard tournament conditions. The result marked a turning point in both chess and public ideas about artificial intelligence.",
+ src:['Deep Blue versus Kasparov','https://en.wikipedia.org/wiki/Deep_Blue_versus_Kasparov']},
+{id:'kramnik',yr:2000,ic:'🧱',tag:'World title',t:'The Berlin Wall in London',
+ text:"In the 2000 World Championship in London, Vladimir Kramnik used the Berlin Defence of the Ruy Lopez as a fortress against Garry Kasparov. Kasparov could not break it; Kramnik won the match without losing a game and ended Kasparov's 15-year reign. Club players still call 1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 \"the Berlin Wall\".",
+ src:['Vladimir Kramnik','https://en.wikipedia.org/wiki/Vladimir_Kramnik'],src2:['Berlin Defence','https://en.wikipedia.org/wiki/Berlin_Defence']},
+{id:'anand',yr:2007,ic:'🇮🇳',tag:'World title',t:'Anand, India\'s champion',
+ text:"Viswanathan Anand won the 2007 World Championship tournament in Mexico City, becoming India's first undisputed World Champion of the modern era (he had held the FIDE title earlier). He later defended the title in matches. Anand's rise helped spark a chess boom in India that continues today.",
+ src:['Viswanathan Anand','https://en.wikipedia.org/wiki/Viswanathan_Anand']},
+{id:'carlsen',yr:2013,ic:'🇳🇴',tag:'World title',t:'Carlsen in Chennai',
+ text:"In 2013 Magnus Carlsen beat Viswanathan Anand in Chennai to become World Champion. He was known for grinding wins from equal-looking positions and for a huge practical fighting spirit. He held the classical title until 2023, when he chose not to defend it.",
+ src:['Magnus Carlsen','https://en.wikipedia.org/wiki/Magnus_Carlsen'],src2:['World Chess Championship 2013','https://en.wikipedia.org/wiki/World_Chess_Championship_2013']},
+{id:'ding',yr:2023,ic:'🇨🇳',tag:'World title',t:'Ding Liren, China\'s first',
+ text:"After Magnus Carlsen declined to defend his title, Ding Liren of China beat Ian Nepomniachtchi in the 2023 World Championship match. Ding became China's first men's World Champion. In game 6 he used the London System — an opening you will meet in Chess Cities — to score a famous win.",
+ src:['Ding Liren','https://en.wikipedia.org/wiki/Ding_Liren'],src2:['World Chess Championship 2023','https://en.wikipedia.org/wiki/World_Chess_Championship_2023']},
+{id:'gukesh',yr:2024,ic:'♟️',tag:'World title',t:'Gukesh, youngest undisputed champion',
+ text:"In 2024 Gukesh Dommaraju of India beat Ding Liren in Singapore to become the youngest undisputed World Chess Champion at 18. His win continued the Indian chess wave that Anand began and showed how quickly a new generation can reach the very top.",
+ src:['Gukesh Dommaraju','https://en.wikipedia.org/wiki/Gukesh_Dommaraju']}
+];
+// ================= v8 R26: Story of the Day =================
+ST.storySeen=ST.storySeen||{};   // id -> date first read
+ST.storyDay=ST.storyDay||{};     // date -> story id (locks the day's pick)
+ST.storyMate=ST.storyMate||{};   // id -> true if mating move found
+
+function storyHash(d){let h=0;for(const ch of d)h=(h*33+ch.charCodeAt(0))>>>0;return h}
+function storyOfDay(d){d=d||today();if(ST.storyDay[d]){const s=STORIES.find(x=>x.id===ST.storyDay[d]);if(s)return s}
+ const unread=STORIES.filter(s=>!ST.storySeen[s.id]);const pool=unread.length?unread:STORIES;
+ const s=pool[storyHash(d)%pool.length];ST.storyDay[d]=s.id;save();return s}
+function storyReadCount(){return Object.keys(ST.storySeen).length}
+function storyReadToday(){return !!ST.storySeen[storyOfDay().id]&&ST.storySeen[storyOfDay().id]<=today()}
+function markStoryRead(id){const first=!ST.storySeen[id];if(first){ST.storySeen[id]=today();save();addXP(25,'story of the day');questProg('lesson')}
+ else{ST.storySeen[id]=ST.storySeen[id]||today();save()}
+ return first}
+
+function storySrcHTML(s){const links=[[s.src[0],s.src[1]]];if(s.src2)links.push(s.src2);return links.map(l=>`<a href="${l[1]}" target="_blank" rel="noopener">${esc(l[0])}</a>`).join(' · ')}
+
+function storyTeaser(){const s=storyOfDay(),read=!!ST.storySeen[s.id];
+ return `<div class="card dteaser steaser" id="storyBtn" onclick="openDailyStory()"><div class="sic">${s.ic}</div><div style="flex:1"><b>Story of the day · ${s.yr}</b><div class="sub" style="margin:0">${esc(s.t)}${read?' · read ✓':''} · ${storyReadCount()}/${STORIES.length} in the archive</div></div><span class="btn sm ${read?'':'pri'}">${read?'Revisit':'Read'} →</span></div>`}
+
+function openDailyStory(id){const s=id?STORIES.find(x=>x.id===id):storyOfDay();if(!s)return;setActivity&&setActivity('story');
+ const hasMate=!!s.fen,mated=!!ST.storyMate[s.id];
+ const mateBox=hasMate?`<div class="scard matebox" id="smate"><div class="row" style="justify-content:space-between;align-items:center"><b>♟ Finish the masterpiece</b><span class="sub" style="margin:0">${mated?'Solved ✓':(s.hint?('hint: '+s.hint):'find mate in 1')}</span></div><div class="patb big sboard" id="sboard"></div><div class="msg" id="smsg" style="margin-top:8px">${mated?'You found the mate. Beautiful.':'Play the mating move on the board — same finish the master played.'}</div></div>`:'';
+ modal(`<div class="storymodal"><div class="shead"><span class="syr">${s.yr}</span><span class="stag">${esc(s.tag)}</span></div><h2 class="h1" style="font-size:24px;margin:6px 0 10px">${s.ic} ${esc(s.t)}</h2><div class="story sbody">${s.text}</div><div class="sub" style="margin:10px 0 0">Sources: ${storySrcHTML(s)}</div>${mateBox}<div class="row" style="justify-content:center;margin-top:14px;flex-wrap:wrap;gap:8px"><button class="btn pri" id="sGot">${ST.storySeen[s.id]?'Close':'Got it — +25 XP'}</button><button class="btn" onclick="closeModal();openStoryArchive()">Archive (${storyReadCount()}/${STORIES.length})</button></div></div>`);
+ $('sGot').onclick=()=>{markStoryRead(s.id);closeModal();if(typeof renderMap==='function')renderMap()};
+ if(hasMate)setTimeout(()=>wireStoryMate(s),40)}
+
+function wireStoryMate(s){const host=$('sboard');if(!host)return;
+ const done=!!ST.storyMate[s.id];
+ if(done){const c=new ChessLib.Chess(s.fen);const u=s.mate;c.move({from:u.slice(0,2),to:u.slice(2,4),promotion:u[4]||undefined});
+  host.innerHTML='<div></div>';miniBoard(host,c.fen(),s.orient||'w');return}
+ host.innerHTML='';
+ const b=new Board(host,{fen:s.fen,orient:s.orient||'w',theme:themeFor(CITIES[0]),human:()=>s.orient||'w',onUser:m=>{
+  const t=new ChessLib.Chess(s.fen);let r;try{r=t.move(m)}catch(e){return false}
+  const uci=r.from+r.to+(r.promotion||'');
+  const alts=new Set([s.mate,...(s.alt||[])]);
+  const ok=alts.has(uci)||t.isCheckmate();
+  if(ok){SND.ok();ST.storyMate[s.id]=true;save();markStoryRead(s.id);
+   b.move(m);b.locked=true;
+   const msg=$('smsg');if(msg){msg.className='msg ok';msg.innerHTML=`✓ <b>${esc(r.san)}</b> — checkmate! The same finish that made this game immortal. +10 XP`}
+   addXP(10,'story mate');if(typeof renderMap==='function')renderMap();confetti&&confetti(60);return true}
+  SND.bad();const msg=$('smsg');if(msg){msg.className='msg';msg.innerHTML=`Not the mate — try again. ${s.hint?('Hint: <b>'+esc(s.hint)+'</b>.'):''}`}
+  return false}});
+ b.locked=false}
+
+function openStoryArchive(){setActivity&&setActivity('story-archive');
+ const rows=STORIES.map(s=>{const rd=!!ST.storySeen[s.id],mt=!!ST.storyMate[s.id];
+  return `<button class="hallbtn srow${rd?' seen':''}" onclick="closeModal();openDailyStory('${s.id}')"><span class="syr">${s.yr}</span><span class="sic" style="font-size:22px">${s.ic}</span><span style="flex:1;text-align:left"><b>${esc(s.t)}</b><div class="sub" style="margin:2px 0 0">${esc(s.tag)}${rd?' · read':''}${mt?' · mate ✓':''}</div></span><span class="sub">${rd?'✓':'→'}</span></button>`}).join('');
+ modal(`<h2 class="h1" style="font-size:24px">📖 Story Archive</h2><p class="sub">${storyReadCount()}/${STORIES.length} stories read · one new vignette every day, with a Wikipedia source. Famous-game stories hide a mate-in-1 finish you can play.</p><div class="hall sarch">${rows}</div><div class="row" style="justify-content:center;margin-top:10px"><button class="btn pri" onclick="closeModal()">Close</button></div>`)}
+
+// Replace "Read today's champion" in Today's Plan with Story of the Day (Hall teaser stays)
+const _todayPlan26=todayPlan;
+todayPlan=function(){const t=today(),d=ST.daily[t],mins=Math.round(daySecs(t)/60),due=srsDue().length;
+ let i=CITIES.findIndex((c,i)=>unlocked(i)&&!mastered(c.id));if(i<0)i=CITIES.length-1;const c=CITIES[i];
+ const s=storyOfDay();
+ const items=[[!!(d&&d.done),'Solve the Daily Puzzle',"go('s-daily')"],[due===0,due?`Clear ${due} review${due>1?'s':''}`:'Review deck clear',"openReview()"],[mins>=10,`Practise 10 minutes (${Math.min(mins,10)}/10)`,`openCity(${i})`],[!!ST.storySeen[s.id],'Read today\'s story',`openDailyStory()`]];
+ const n=items.filter(x=>x[0]).length;
+ return `<div class="card plan" id="planCard"><div class="row" style="justify-content:space-between"><b>📋 Today's plan</b><span class="sub" style="margin:0">${n}/${items.length}${n===items.length?' · perfect day ⭐':''}</span></div><div class="pbar"><i style="width:${n/items.length*100}%"></i></div>${items.map(x=>`<div class="pitem${x[0]?' ok':''}" onclick="${x[2]}"><span>${x[0]?'✅':'⬜'}</span>${x[1]}</div>`).join('')}<div class="sub" style="margin:6px 0 0">Next city: <b>${c.name}</b></div></div>`};
+
+const _renderMap26=renderMap;
+renderMap=function(){_renderMap26();const D=$('daily');if(!D)return;
+ // refresh plan card (story item)
+ const old=$('planCard');if(old)old.outerHTML=todayPlan();else if($('dailyBtn'))$('dailyBtn').insertAdjacentHTML('beforebegin',todayPlan());
+ if(!$('storyBtn')){const h=$('hallBtn');(h||D).insertAdjacentHTML(h?'beforebegin':'beforeend',storyTeaser())}
+ else{$('storyBtn').outerHTML=storyTeaser()}};
 renderMap();
 </script></body></html>
