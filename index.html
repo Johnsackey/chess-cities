@@ -285,6 +285,15 @@ main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .bwrap:focus-visible{outline:3px solid #ffd27a;outline-offset:3px}
 .kbhint{font-size:12px;margin-top:6px}
+
+/* R29: City lore card on attack/defense/tactics practice sessions */
+.lorecard{margin:0 0 12px;border:1px solid color-mix(in srgb,var(--city) 35%,transparent)}
+.loretitle{font-family:var(--serif);font-size:18px;margin:8px 0 6px;line-height:1.35;color:var(--fg,#e8ecf4)}
+.lorex{font-size:15px;line-height:1.55;word-break:break-word;overflow-wrap:anywhere}
+.lorerow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.lorelink{color:var(--city);font-family:var(--font);font-size:13px;display:inline-flex;align-items:center;min-height:24px;padding:4px 2px;max-width:100%;word-break:break-word}
+#loreDismiss{min-height:24px;min-width:72px;padding:8px 14px}
+@media(max-width:480px){.loretitle{font-size:16px}.lorex{font-size:14px}.lorerow{flex-direction:column;align-items:stretch}.lorelink,#loreDismiss{width:100%;justify-content:center;text-align:center;box-sizing:border-box}}
 </style>
 <style id="piecescss">.pwK{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgdmlld0JveD0iMCAwIDQ1IDQ1Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMTEuNjNWNk0yMCA4aDUiLz48cGF0aCBmaWxsPSIjZmZmIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMjVzNC41LTcuNSAzLTEwLjVjMCAwLTEtMi41LTMtMi41cy0zIDIuNS0zIDIuNWMtMS41IDMgMyAxMC41IDMgMTAuNSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMS41IDM3YzUuNSAzLjUgMTUuNSAzLjUgMjEgMHYtN3M5LTQuNSA2LTEwLjVjLTQtNi41LTEzLjUtMy41LTE2IDRWMjd2LTMuNWMtMy41LTcuNS0xMy0xMC41LTE2LTQtMyA2IDUgMTAgNSAxMHoiLz48cGF0aCBkPSJNMTEuNSAzMGM1LjUtMyAxNS41LTMgMjEgMG0tMjEgMy41YzUuNS0zIDE1LjUtMyAyMSAwbS0yMSAzLjVjNS41LTMgMTUuNS0zIDIxIDAiLz48L2c+PC9zdmc+)}
 .pwQ{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjQ1IiB2aWV3Qm94PSIwIDAgNDUgNDUiPjxnIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBkPSJNOCAxMmEyIDIgMCAxIDEtNCAwIDIgMiAwIDEgMSA0IDBtMTYuNS00LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTQxIDEyYTIgMiAwIDEgMS00IDAgMiAyIDAgMSAxIDQgME0xNiA4LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTMzIDlhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwIi8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzguNS0xLjUgMjEtMS41IDI3IDBsMi0xMi03IDExVjExbC01LjUgMTMuNS0zLTE1LTMgMTUtNS41LTE0VjI1TDcgMTR6Ii8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzAgMiAxLjUgMiAyLjUgNCAxIDEuNSAxIDEgLjUgMy41LTEuNSAxLTEuNSAyLjUtMS41IDIuNS0xLjUgMS41LjUgMi41LjUgMi41IDYuNSAxIDE2LjUgMSAyMyAwIDAgMCAxLjUtMSAwLTIuNSAwIDAgLjUtMS41LTEtMi41LS41LTIuNS0uNS0yIC41LTMuNSAxLTIgMi41LTIgMi41LTQtOC41LTEuNS0xOC41LTEuNS0yNyAweiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0xMS41IDMwYzMuNS0xIDE4LjUtMSAyMiAwTTEyIDMzLjVjNi0xIDE1LTEgMjEgMCIvPjwvZz48L3N2Zz4=)}
@@ -5388,4 +5397,18 @@ renderMap=function(){_renderMap26();const D=$('daily');if(!D)return;
  if(!$('storyBtn')){const h=$('hallBtn');(h||D).insertAdjacentHTML(h?'beforebegin':'beforeend',storyTeaser())}
  else{$('storyBtn').outerHTML=storyTeaser()}};
 renderMap();
+
+// ================= v8 R29: City lore on practice sessions =================
+ST.loreSeen=ST.loreSeen||{}; // city id -> YYYY-MM-DD when lore was shown/dismissed
+function loreExcerpt(t,n){n=n||220;if(!t)return'';if(t.length<=n)return t;const cut=t.slice(0,n);const m=cut.match(/^[\s\S]*?[.!?…](?=\s|$)/);if(m&&m[0].length>=80)return m[0].trim();const sp=cut.lastIndexOf(' ');return((sp>60?cut.slice(0,sp):cut).trim())+'…'}
+function shouldShowCityLore(c){return !!(c&&c.story&&c.story.title&&(ST.loreSeen[c.id]||'')!==today())}
+function cityLoreHTML(c){const s=c.story,ex=loreExcerpt(s.text,220),lab=(s.src||'').replace(/^https?:\/\//,'');
+ return `<div class="card lorecard" id="loreCard" role="region" aria-label="City lore"><div class="row" style="justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span class="tag">📖 City lore</span></div><h3 class="loretitle">📖 ${esc(s.title)}</h3><div class="story lorex">${esc(ex)}</div><div class="lorerow"><a class="lorelink" href="${s.src}" target="_blank" rel="noopener">Source: ${esc(lab)}</a><button type="button" class="btn sm" id="loreDismiss">Got it</button></div></div>`}
+function dismissCityLore(){const c=curCity;if(c){ST.loreSeen=ST.loreSeen||{};ST.loreSeen[c.id]=today();save()}const el=$('loreCard');if(el)el.remove()}
+function injectCityLore(){const c=curCity;if(!c||!SES)return;if(SES.pattern!=null||SES.school||SES.review)return;if(!['attack','defense','tactics'].includes(SES.d))return;if(SES.k!==0)return;if(!shouldShowCityLore(c))return;if($('loreCard'))return;const panel=document.querySelector('#s-ex .panel');if(!panel)return;panel.insertAdjacentHTML('afterbegin',cityLoreHTML(c));ST.loreSeen=ST.loreSeen||{};ST.loreSeen[c.id]=today();save();const b=$('loreDismiss');if(b)b.onclick=dismissCityLore}
+const _loadPuz29=loadPuz;loadPuz=function(e){_loadPuz29(e);injectCityLore()};
+const _loadEx1_29=loadEx1;loadEx1=function(){_loadEx1_29();injectCityLore()};
+// tiny visible build label in Settings
+const _renderSettings29=typeof renderSettings==='function'?renderSettings:renderSettings1;
+renderSettings=function(){_renderSettings29();const host=$('s-settings');if(!host||host.querySelector('#buildLabel'))return;host.insertAdjacentHTML('beforeend','<div class="sub" id="buildLabel" style="margin:12px 0 0;text-align:center">Chess Cities · build R29</div>')};
 </script></body></html>
