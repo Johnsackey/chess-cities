@@ -316,6 +316,18 @@ main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .newtag{font-size:12px;font-weight:800;color:#0b0f1a;background:var(--acc);border-radius:999px;padding:2px 8px;letter-spacing:.04em}
 .patcard:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .src31 a{display:inline-block;min-height:24px;line-height:24px}
+/* R32 Coordinate Sprint */
+.cs-board .co{display:none}
+.cs-stats{display:flex;gap:28px;margin:10px 0 4px}
+.cs-num{font-size:30px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.cs-num.low{color:#ff8a8a}
+.cs-q{font-size:20px;min-height:2.4em}
+.cs-sq{font-size:30px;color:var(--gold,#ffd27a);letter-spacing:1px}
+.cs-tile{cursor:default;align-items:flex-start}
+.cs-tile .btn{min-height:40px}
+.qsq:disabled{cursor:default}
+.qsq:focus-visible{outline:3px solid #8cc8ff;outline-offset:-3px}
+.cs-board .kbhint{display:none}
 </style>
 <style id="piecescss">.pwK{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgdmlld0JveD0iMCAwIDQ1IDQ1Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMTEuNjNWNk0yMCA4aDUiLz48cGF0aCBmaWxsPSIjZmZmIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMjVzNC41LTcuNSAzLTEwLjVjMCAwLTEtMi41LTMtMi41cy0zIDIuNS0zIDIuNWMtMS41IDMgMyAxMC41IDMgMTAuNSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMS41IDM3YzUuNSAzLjUgMTUuNSAzLjUgMjEgMHYtN3M5LTQuNSA2LTEwLjVjLTQtNi41LTEzLjUtMy41LTE2IDRWMjd2LTMuNWMtMy41LTcuNS0xMy0xMC41LTE2LTQtMyA2IDUgMTAgNSAxMHoiLz48cGF0aCBkPSJNMTEuNSAzMGM1LjUtMyAxNS41LTMgMjEgMG0tMjEgMy41YzUuNS0zIDE1LjUtMyAyMSAwbS0yMSAzLjVjNS41LTMgMTUuNS0zIDIxIDAiLz48L2c+PC9zdmc+)}
 .pwQ{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjQ1IiB2aWV3Qm94PSIwIDAgNDUgNDUiPjxnIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBkPSJNOCAxMmEyIDIgMCAxIDEtNCAwIDIgMiAwIDEgMSA0IDBtMTYuNS00LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTQxIDEyYTIgMiAwIDEgMS00IDAgMiAyIDAgMSAxIDQgME0xNiA4LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTMzIDlhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwIi8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzguNS0xLjUgMjEtMS41IDI3IDBsMi0xMi03IDExVjExbC01LjUgMTMuNS0zLTE1LTMgMTUtNS41LTE0VjI1TDcgMTR6Ii8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzAgMiAxLjUgMiAyLjUgNCAxIDEuNSAxIDEgLjUgMy41LTEuNSAxLTEuNSAyLjUtMS41IDIuNS0xLjUgMS41LjUgMi41LjUgMi41IDYuNSAxIDE2LjUgMSAyMyAwIDAgMCAxLjUtMSAwLTIuNSAwIDAgLjUtMS41LTEtMi41LS41LTIuNS0uNS0yIC41LTMuNSAxLTIgMi41LTIgMi41LTQtOC41LTEuNS0xOC41LTEuNS0yNyAweiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0xMS41IDMwYzMuNS0xIDE4LjUtMSAyMiAwTTEyIDMzLjVjNi0xIDE1LTEgMjEgMCIvPjwvZz48L3N2Zz4=)}
@@ -5514,4 +5526,40 @@ function kbCards(root){(root||document).querySelectorAll('.patcard[onclick]:not(
  const box=document.querySelector('.patlesson>div:last-child');if(box&&!box.querySelector('.src31'))box.insertAdjacentHTML('beforeend',`<p class="sub src31">Read more: <a href="${m[5]}" target="_blank" rel="noopener">${esc(m[6])}</a></p>`)}}
 window.CC_BUILD='R31';
 {const _rs31=renderSettings;renderSettings=function(){_rs31();const l=$('buildLabel');if(l)l.textContent='Chess Cities · build R31'}}
+// ================= v11 R32: Visualization Gym — Coordinate Sprint =================
+// Save-compatible: results live in ST.acad.viz.coordW / coordB = {best,d,runs} inside cc2_state; no new keys.
+// Timed drill (30 s): a square is named, tap it on an empty board with the edge labels hidden. Play from White's or Black's side.
+let CS=null;window.CS_DUR=30;
+function csPick(prev){let s=rsq();while(s===prev)s=rsq();return s}
+function startCS(side){engineCancel&&engineCancel();if(CS&&CS.tm)clearInterval(CS.tm);side=side==='b'?'b':'w';setActivity('viz:coord');
+ const A=acad('viz'),best=((A['coord'+side.toUpperCase()]||{}).best)||0;
+ CS={side,score:0,miss:[],tries:0,cur:null,end:0,tm:null,started:false,dur:window.CS_DUR||30,best};
+ $('s-ex').innerHTML=`<button class="back" onclick="csQuit()">← Back</button><div class="playwrap"><div><div class="cs-board" style="position:relative"><div class="bwrap" id="vboard"></div><div class="qover" id="qover"></div></div></div><div class="panel"><div class="card cs-card"><div class="row" style="justify-content:space-between"><span class="tag">🎯 Coordinate Sprint</span><span class="sub" style="margin:0">${side==='w'?'White':'Black'}'s side · best ${best}</span></div>
+ <div class="cs-stats"><div><div class="cs-num" id="csTime">${CS.dur}</div><div class="sub" style="margin:0">seconds</div></div><div><div class="cs-num" id="csScore">0</div><div class="sub" style="margin:0">found</div></div></div>
+ <h2 class="vzq cs-q" id="csq" aria-live="polite">Tap <b>Start</b>, then tap each square as it is named.</h2><div class="msg" id="vmsg" aria-live="polite"></div>
+ <button class="btn pri" id="csGo" onclick="csBegin()">Start</button></div><div class="card sub" style="font-size:12.5px">Strong players know every square by name, from both sides of the board. That is what lets you read a book, follow a commentary or picture a move in your head. The board labels are hidden on purpose. You have ${CS.dur} seconds, and a wrong tap only costs time.</div></div></div>`;
+ board=new Board($('vboard'),{orient:side,theme:themeFor(CITIES[0]),human:()=>null});board.chess.clear();board.render();board.locked=true;
+ const ov=$('qover');for(let y=0;y<8;y++)for(let x=0;x<8;x++){const f=side==='w'?x:7-x,r=side==='w'?8-y:y+1,sq=FILES[f]+r;const d=document.createElement('button');d.className='qsq';d.dataset.sq=sq;d.setAttribute('aria-label','board square');d.disabled=true;d.onclick=()=>csTap(sq,d);ov.appendChild(d)}
+ show('s-ex');scrollTo(0,0)}
+function csBegin(){if(!CS||CS.started)return;CS.started=true;CS.end=Date.now()+CS.dur*1000;$('csGo').style.display='none';document.querySelectorAll('#qover .qsq').forEach(b=>b.disabled=false);csNext();
+ CS.tm=setInterval(csTick,200)}
+function csTick(){if(!CS)return;if(!$('csq')){clearInterval(CS.tm);CS=null;return}const left=Math.max(0,Math.ceil((CS.end-Date.now())/1000));$('csTime').textContent=left;if(left<=5)$('csTime').classList.add('low');if(Date.now()>=CS.end)csEnd()}
+function csNext(){CS.cur=csPick(CS.cur);$('csq').innerHTML=`Find <b class="cs-sq mono">${CS.cur}</b>`}
+function csFlash(d,c){d.classList.add(c);setTimeout(()=>d.classList.remove(c),c==='good'?260:650)}
+function csTap(sq,d){if(!CS||!CS.started||CS.done)return;CS.tries++;
+ if(sq===CS.cur){CS.score++;$('csScore').textContent=CS.score;SND.ok();csFlash(d,'good');$('vmsg').className='msg';$('vmsg').textContent='';csNext()}
+ else{SND.bad();csFlash(d,'wrong');const g=[...document.querySelectorAll('#qover .qsq')].find(e=>e.dataset.sq===CS.cur);g&&csFlash(g,'miss');if(!CS.miss.includes(CS.cur))CS.miss.push(CS.cur);
+  $('vmsg').className='msg bad';$('vmsg').innerHTML=`✗ That was <b>${sq}</b>. <b>${CS.cur}</b> is shown in yellow.`;csNext()}}
+function csEnd(){if(!CS||CS.done)return;CS.done=true;clearInterval(CS.tm);document.querySelectorAll('#qover .qsq').forEach(b=>b.disabled=true);
+ const key='coord'+CS.side.toUpperCase(),A=acad('viz'),prev=A[key]||{},rec=CS.score>(prev.best||0);A[key]={best:Math.max(prev.best||0,CS.score),d:today(),runs:(prev.runs||0)+1};save();
+ const acc=CS.tries?Math.round(100*CS.score/CS.tries):0,xp=Math.min(24,CS.score);if(xp)addXP(xp,'trainer');SND.win();if(rec&&CS.score>=5)confetti(70);
+ const side=CS.side,miss=CS.miss.slice(0,8);
+ modal(`<div class="big-emoji">🎯</div><h2 class="h1">${CS.score} square${CS.score===1?'':'s'}</h2><p class="sub">${CS.tries?`${acc}% accuracy · `:''}${side==='w'?'White':'Black'}'s side · ${rec?'<b>New best!</b>':'best '+A[key].best}</p>${miss.length?`<p class="sub">Squares to review: <b class="mono">${miss.join(', ')}</b></p>`:''}<p class="sub" style="font-size:13px">${CS.score>=20?'Excellent board vision. Now try the other side.':'Tip: learn the centre first (d4, e4, d5, e5), then count out from it.'}</p><div class="row" style="justify-content:center"><button class="btn pri" onclick="closeModal();startCS('${side}')">Again</button><button class="btn" onclick="closeModal();startCS('${side==='w'?'b':'w'}')">Other side</button><button class="btn" onclick="closeModal();openViz()">Back</button></div>`)}
+function csQuit(){if(CS&&CS.tm)clearInterval(CS.tm);CS=null;openViz()}
+// add the Sprint card to the Visualization Gym and its scores to the Academy tile
+{const _ov32=openViz;openViz=function(){if(CS&&CS.tm)clearInterval(CS.tm);CS=null;_ov32();const g=document.querySelector('#s-ex .acadgrid');if(!g)return;const A=acad('viz'),bw=(A.coordW||{}).best||0,bb=(A.coordB||{}).best||0;
+ g.insertAdjacentHTML('beforeend',`<div class="card acadtile cs-tile"><div class="aic">🎯</div><div style="flex:1;min-width:0"><b>Coordinate Sprint</b> <span class="newtag">New</span><div class="sub" style="margin:2px 0 6px">30 seconds: tap each square as it is named, with the board labels hidden. Best: White ${bw} · Black ${bb}</div><div class="row" style="gap:8px"><button class="btn pri" id="csW" onclick="startCS('w')">As White</button><button class="btn" id="csB" onclick="startCS('b')">As Black</button></div></div></div>`)}}
+{const t=ACAD_TILES.find(x=>x.id==='viz');if(t){const _s=t.sub;t.sub=()=>{const A=acad('viz');return _s()+` · squares W ${(A.coordW||{}).best||0} / B ${(A.coordB||{}).best||0}`}}}
+window.CC_BUILD='R32';
+{const _rs32=renderSettings;renderSettings=function(){_rs32();const l=$('buildLabel');if(l)l.textContent='Chess Cities · build R32'}}
 </script></body></html>
