@@ -328,6 +328,22 @@ main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .qsq:disabled{cursor:default}
 .qsq:focus-visible{outline:3px solid #8cc8ff;outline-offset:-3px}
 .cs-board .kbhint{display:none}
+/* R33 Endgame Ladder: practical endings */
+.ladder .lsec33{margin:8px 0 0}
+.ladder .lsec33:first-child{margin-top:0}
+.lrung[role=button]:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.lles33 p{margin:0 0 8px}
+.lhd33{font-size:12px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--acc);margin:6px 0 4px}
+.lsteps33{margin:0 0 8px;padding-left:20px;font-size:14px;line-height:1.45;text-align:left}
+.lsteps33 li{margin:0 0 4px}
+.lnote33{margin:8px 0;padding:10px 12px;border-radius:12px;background:#ffffff08;border:1px solid color-mix(in srgb,var(--acc) 30%,transparent);text-align:left}
+.lnote33 p{font-size:14px;line-height:1.5;margin:0;overflow-wrap:anywhere}
+.lsrc33{display:flex;flex-wrap:wrap;gap:2px 14px;margin-top:6px}
+.lsrc33 a{display:inline-block;min-height:24px;line-height:24px;font-size:13px}
+.lles33{text-align:left}
+@media(max-width:520px){.lsteps33,.lnote33 p{font-size:13.5px}}
+/* R33 phone fix: tall pop-ups scroll instead of running off the screen */
+#modal{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 </style>
 <style id="piecescss">.pwK{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgdmlld0JveD0iMCAwIDQ1IDQ1Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMTEuNjNWNk0yMCA4aDUiLz48cGF0aCBmaWxsPSIjZmZmIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMjVzNC41LTcuNSAzLTEwLjVjMCAwLTEtMi41LTMtMi41cy0zIDIuNS0zIDIuNWMtMS41IDMgMyAxMC41IDMgMTAuNSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMS41IDM3YzUuNSAzLjUgMTUuNSAzLjUgMjEgMHYtN3M5LTQuNSA2LTEwLjVjLTQtNi41LTEzLjUtMy41LTE2IDRWMjd2LTMuNWMtMy41LTcuNS0xMy0xMC41LTE2LTQtMyA2IDUgMTAgNSAxMHoiLz48cGF0aCBkPSJNMTEuNSAzMGM1LjUtMyAxNS41LTMgMjEgMG0tMjEgMy41YzUuNS0zIDE1LjUtMyAyMSAwbS0yMSAzLjVjNS41LTMgMTUuNS0zIDIxIDAiLz48L2c+PC9zdmc+)}
 .pwQ{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjQ1IiB2aWV3Qm94PSIwIDAgNDUgNDUiPjxnIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBkPSJNOCAxMmEyIDIgMCAxIDEtNCAwIDIgMiAwIDEgMSA0IDBtMTYuNS00LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTQxIDEyYTIgMiAwIDEgMS00IDAgMiAyIDAgMSAxIDQgME0xNiA4LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTMzIDlhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwIi8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzguNS0xLjUgMjEtMS41IDI3IDBsMi0xMi03IDExVjExbC01LjUgMTMuNS0zLTE1LTMgMTUtNS41LTE0VjI1TDcgMTR6Ii8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzAgMiAxLjUgMiAyLjUgNCAxIDEuNSAxIDEgLjUgMy41LTEuNSAxLTEuNSAyLjUtMS41IDIuNS0xLjUgMS41LjUgMi41LjUgMi41IDYuNSAxIDE2LjUgMSAyMyAwIDAgMCAxLjUtMSAwLTIuNSAwIDAgLjUtMS41LTEtMi41LS41LTIuNS0uNS0yIC41LTMuNSAxLTIgMi41LTIgMi41LTQtOC41LTEuNS0xOC41LTEuNS0yNyAweiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0xMS41IDMwYzMuNS0xIDE4LjUtMSAyMiAwTTEyIDMzLjVjNi0xIDE1LTEgMjEgMCIvPjwvZz48L3N2Zz4=)}
@@ -5562,4 +5578,67 @@ function csQuit(){if(CS&&CS.tm)clearInterval(CS.tm);CS=null;openViz()}
 {const t=ACAD_TILES.find(x=>x.id==='viz');if(t){const _s=t.sub;t.sub=()=>{const A=acad('viz');return _s()+` · squares W ${(A.coordW||{}).best||0} / B ${(A.coordB||{}).best||0}`}}}
 window.CC_BUILD='R32';
 {const _rs32=renderSettings;renderSettings=function(){_rs32();const l=$('buildLabel');if(l)l.textContent='Chess Cities · build R32'}}
+// ================= v12 R33: Endgame Ladder — Practical Endings (rungs 10–13) =================
+// Save-compatible: results reuse ST.egDone['endgame:lad_<id>'] inside cc2_state (exactly like rungs 1–9); no new keys or fields.
+// New rungs are appended after the Lucena, so existing progress and unlocking are unchanged.
+// Start positions: Fischer–Larsen 1971 checked with Stockfish at depth 24 (+5.9, a win); the three 4-piece positions checked
+// against the Lichess (Syzygy) endgame tablebase: Queen vs pawn = win; Queen vs bishop pawn and Wrong-colour bishop = draw.
+const LAD33_FROM=LADDER.length;
+LADDER.push(
+ ["out","Outside passed pawn","8/4kp2/6p1/7p/P7/2K3P1/7P/8 w - - 0 1","promote","\ud83c\udfc3","You are White in Fischer vs Larsen, 1971. Material is level, but your a-pawn is passed and far away from the other pawns. Run it up the board: Black's king has to chase it, and while it does, your king walks over and eats Black's kingside pawns. Then make a queen."],
+ ["qp","Queen vs pawn","3Q4/1K6/8/8/8/4k3/4p3/8 w - - 0 1","mate","\u2655","Black's pawn is one step from queening and threatens ...e1=Q right now. First stop it. Then use checks to force Black's king onto e1, in front of its own pawn. Each time it is stuck there you get a free move: bring your king one step closer. Repeat until you win the pawn, then checkmate."],
+ ["qbp","Queen vs bishop pawn","8/8/1Q6/8/4K3/8/1kp5/8 b - - 0 1","hold","\ud83e\udd1d","You are Black, with a pawn on c2, and White's king is far away. White has just checked with Qb6+. Run to the corner: ...Ka1! If White takes the pawn with Qxc2, it is stalemate. Stay next to your pawn and the corner, and survive 20 moves."],
+ ["wrp","Wrong-colour bishop","5K2/5B2/7k/7P/8/8/8/8 b - - 0 1","hold","\ud83c\udff0","You are Black with a bare king. White's bishop moves on light squares, but the h-pawn queens on h8, a dark square: the \"wrong\" bishop. If your king gets into the corner, White can never drive it out. Play ...Kh7! and then ...Kh8, and stay there. Survive 20 moves."]);
+const LAD33={
+ out:{steps:["Push the a-pawn (a5, a6). Black's king has to run over to stop it.","Bring your king to the centre: Kd4, then Kd5.","While Black's king is busy with the a-pawn, walk to e6 and take the kingside pawns.","Promote whichever pawn is free. Watch out for stalemate."],
+  note:"Bobby Fischer reached this exact position against Bent Larsen in game 5 of their 1971 Candidates semi-final in Denver. He won with 41.Kd4 Kd6 42.a5 f6 43.a6 Kc6 44.a7 Kb7 45.Kd5 h4 46.Ke6, and Larsen resigned. Fischer won the match 6–0.",
+  src:[["Wikipedia: Passed pawn (outside passed pawn)","https://en.wikipedia.org/wiki/Passed_pawn#Outside_passed_pawn"],["Wikipedia: Bent Larsen","https://en.wikipedia.org/wiki/Bent_Larsen"],["The game on Chessgames.com","https://www.chessgames.com/perl/chessgame?gid=1044348"]]},
+ qp:{steps:["Stop ...e1=Q at once with a check (Qg5+, Qe7+, Qe8+, Qb6+) or a queen move that covers e1 (Qh4, Qa5). The tablebase says only these six moves win; anything slower lets Black make a queen.","Keep checking or pinning until Black's king has to step onto e1, in front of the pawn.","That gives you a free move: bring your king one step closer (Kc6, Kd5, Ke4…).","Repeat. When your king arrives, win the pawn and finish with king + queen mate, as on rung 1."],
+  note:"This is the textbook method from Yasser Seirawan's Winning Chess Endings (2003), as shown on Wikipedia (their example starts one move earlier, before 1...Ke3). It works against a centre pawn or a knight pawn. Against a bishop pawn or a rook pawn on the 7th it can fail because of stalemate, which is the next rung.",
+  src:[["Wikipedia: Queen versus pawn endgame","https://en.wikipedia.org/wiki/Queen_versus_pawn_endgame"]]},
+ qbp:{lose:'pawn',ok:'\ud83e\udd1d Draw held! That is the stalemate defence with a bishop pawn.',bad:'<b>The defence broke.</b> With a bishop pawn, answer checks by going to the corner (a1), so that Qxc2 is stalemate. Press "New game".',
+  steps:["Answer 1.Qb6+ with ...Ka1. (The tablebase says ...Ka2 and ...Ka3 also hold, while ...Kc1 and ...Kc3 lose.)","Keep your king next to the pawn: on a1, b1, b2 or a2.","If White takes the pawn while you are on a1, it is stalemate, which is a draw.","Avoid stepping in front of the pawn onto c1: that hands White a free move to bring the king closer."],
+  note:"The Wikipedia example (from Seirawan) goes 1...Ka1! 2.Qd4+ Kb1 3.Qb4+ Ka1 4.Qc3+ Kb1 5.Qb3+ Ka1!, and White cannot take the pawn without giving stalemate. The rule of thumb: White wins only if its king can reach b3 or d2 in one move.",
+  src:[["Wikipedia: Queen versus pawn endgame (bishop pawn)","https://en.wikipedia.org/wiki/Queen_versus_pawn_endgame#Bishop_pawn"]]},
+ wrp:{lose:'promo',ok:'\ud83c\udff0 Draw held! The wrong-colour bishop cannot drive your king out of the corner.',bad:'<b>The pawn got through.</b> Head straight for the corner: ...Kh7 and ...Kh8, then stay there. Press "New game".',
+  steps:["First move: ...Kh7! (...Kg5? loses: White plays Kg7 and the pawn runs.)","Next: ...Kh8. From then on, move only between h8, g8 and h7, whichever is safe.","Don't leave the corner, even if that looks more active. The corner is your fortress.","If White leaves you no legal move, it is stalemate, which is a draw too."],
+  note:"Edmar Mednis gave this position in 1987, as shown on Wikipedia. With White to move, 1.Kg8! wins. With Black to move, 1...Kh7! and 2...Kh8 draws. The idea was known by 1623, when Gioachino Greco used it in an endgame study.",
+  src:[["Wikipedia: Wrong rook pawn","https://en.wikipedia.org/wiki/Wrong_rook_pawn"]]}};
+const lad33=i=>{const l=LADDER[i];return l&&LAD33[l[0]]};
+// ladder page: updated intro, a "Practical endings" section, keyboard-reachable rungs
+{const _ol33=openLadder;openLadder=function(){_ol33();const host=$('s-ex');const p=host.querySelector('p.sub');
+ if(p)p.textContent=`${LADDER.length} must-know endgames, from basic mates to rook endings and practical pawn and queen endings. You play them out against Stockfish at about 1500 strength. Every start position was checked: the "win" positions really are won and the "hold" positions really are draws. Climb one rung at a time.`;
+ const rungs=[...host.querySelectorAll('.ladder .lrung')];
+ if(rungs[0])rungs[0].insertAdjacentHTML('beforebegin','<div class="patsec lsec33">Classic endings</div>');
+ if(rungs[LAD33_FROM])rungs[LAD33_FROM].insertAdjacentHTML('beforebegin','<div class="patsec lsec33">Practical endings <span class="newtag">New</span></div>');
+ rungs.forEach((r,i)=>{const l=LADDER[i],open=ladOpen(i),name=l[1]+(l[3]==='hold'?', goal: hold the draw':l[3]==='mate'?', goal: checkmate':', goal: make a queen');
+  if(open){r.setAttribute('role','button');r.tabIndex=0;r.setAttribute('aria-label',`Rung ${i+1}: ${name}${ladDone(l[0])?', done':''}`);r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openRung(i)}})}
+  else{r.setAttribute('aria-disabled','true');r.setAttribute('aria-label',`Rung ${i+1}: ${name}, locked`)}})}}
+// rung lesson card for the new rungs: idea, how-to steps, the sourced story and links
+{const _or33=openRung;openRung=function(i){const m=lad33(i);if(!m)return _or33(i);const l=LADDER[i],side=l[2].split(' ')[1];
+ modal(`<h2 class="h1" style="font-size:24px">${l[4]} ${esc(l[1])} <span class="newtag">New</span></h2><div class="patlesson"><div class="patb big" id="rgb"></div><div class="lles33"><p>${esc(l[5])}</p>
+ <div class="lhd33">How to do it</div><ol class="lsteps33">${m.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>
+ <div class="lnote33"><div class="lhd33">From the source</div><p>${esc(m.note)}</p><div class="lsrc33">${m.src.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${esc(s[0])} ↗</a>`).join('')}</div></div>
+ <p class="sub">You play ${side==='w'?'White':'Black'}. ${l[3]==='hold'?'Survive 20 of your moves without losing. A draw (such as stalemate) also passes.':l[3]==='mate'?'Goal: checkmate. There is no move limit, so take your time.':'Goal: make a queen. There is no move limit, so take your time.'}</p></div></div>
+ <div class="row" style="justify-content:center;margin-top:10px"><button class="btn pri" id="rgGo" onclick="closeModal();playRung(${i})">Play it →</button><button class="btn" onclick="closeModal()">Back</button></div>`);
+ setTimeout(()=>{const e=$('rgb');e&&miniBoard(e,l[2],side)},30)}}
+// the engine attacks in "hold" rungs, so label it correctly
+{const _pr33=playRung;playRung=function(i){_pr33(i);if(LADDER[i][3]==='hold')$('pTop').textContent='Stockfish attacker · ~1500';
+ const m=lad33(i),a=m&&document.querySelector('#s-game .panel .card .sub a');if(a){a.href=m.src[0][1];a.textContent='Read more ↗'}}}
+// "hold" rules for the new rungs (the Philidor keeps its own rook rule from R17)
+{const _ap33=afterPlay;afterPlay=function(){const m=PG&&PG.eg&&PG.eg.goalType==='hold'&&!PG.over&&PG.rung!=null&&lad33(PG.rung);if(!m||!m.lose)return _ap33();
+ const ch=board.chess,hm=ch.history({verbose:true}),last=hm[hm.length-1];updMoves();
+ if(last&&last.color===PG.human)PG.myMoves=(PG.myMoves||0)+1;
+ let mat=0;for(const row of ch.board())for(const p of row)if(p&&p.color===PG.human&&p.type!=='k')mat++;
+ const oppPromo=hm.some(x=>x.color!==PG.human&&x.promotion),fail=()=>{PG.over=true;$('pmsg').innerHTML=m.bad;SND.bad()};
+ if(ch.isCheckmate())return fail();
+ if(ch.isDraw()||ch.isStalemate()){egGoal();$('pmsg').innerHTML=`<b>${m.ok}</b>`;return}
+ if(oppPromo||(m.lose==='pawn'&&!mat))return fail();
+ if(PG.myMoves>=20){egGoal();$('pmsg').innerHTML=`<b>${m.ok}</b>`;return}
+ if(ch.turn()!==PG.human){$('pmsg').textContent=`Moves held: ${PG.myMoves}/20`;setTimeout(engMove,250)}else $('pmsg').textContent=`Moves held: ${PG.myMoves}/20. Your move.`}}
+// Phone fix: tall pop-ups (daily story, pattern and rung lessons) could run past the bottom of a phone screen with no way to
+// scroll to their buttons. The overlay now scrolls (CSS in app.css); each new pop-up opens scrolled to the top.
+{const _m33=modal;modal=function(h){_m33(h);const m=$('modal');if(m)m.scrollTop=0}}
+window.CC_BUILD='R33';
+{const _rs33=renderSettings;renderSettings=function(){_rs33();const l=$('buildLabel');if(l)l.textContent='Chess Cities · build R33'}}
 </script></body></html>
