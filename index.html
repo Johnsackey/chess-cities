@@ -351,6 +351,21 @@ main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .trapteaser .trapbtns{flex-wrap:wrap}
 .trapteaser .btn{min-height:40px;white-space:normal;text-align:left}
 .trapteaser{margin-top:12px}
+/* R35 Knight Maze */
+.mz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0}
+.mz-lv{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;min-height:72px;cursor:pointer;color:inherit;font:inherit;border:1px solid rgba(255,255,255,.12)}
+.mz-lv .sub{margin:0;font-size:12.5px}.mz-lv:disabled{opacity:.55;cursor:default}.mz-lv.done{border-color:rgba(95,211,141,.6)}
+.mz-lv:focus-visible{outline:3px solid #8cc8ff;outline-offset:2px}
+.mz-st{font-size:12.5px;color:var(--gold,#ffd27a)}
+.mz-note{font-size:12.5px}.mz-note a{display:inline-block;min-height:26px;line-height:26px}
+.mz-btns{gap:8px;margin-top:8px;flex-wrap:wrap}.mz-btns .btn{min-height:40px}
+.mz-tile{cursor:default;align-items:flex-start}.mz-tile .btn{min-height:40px}
+.qsq.mz-g{background:rgba(255,90,90,.16);position:relative}
+.qsq.mz-g::after{content:'✕';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,120,120,.9);font-size:clamp(14px,4vw,26px);font-weight:800;pointer-events:none}
+.mz-board .kbhint{display:none}
+/* R35 fix: on tap-the-square boards (Gym, Pawn/Plans quizzes) the keyboard hint sat between the board and its tap layer and stretched the layer, so taps landed on the wrong square. The tap layer now stays exactly board-sized, and the hint is hidden there. */
+.qover{bottom:auto;height:auto;aspect-ratio:1/1}
+.kbhint:has(+ .qover){display:none}
 </style>
 <style id="piecescss">.pwK{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgdmlld0JveD0iMCAwIDQ1IDQ1Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMTEuNjNWNk0yMCA4aDUiLz48cGF0aCBmaWxsPSIjZmZmIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMjVzNC41LTcuNSAzLTEwLjVjMCAwLTEtMi41LTMtMi41cy0zIDIuNS0zIDIuNWMtMS41IDMgMyAxMC41IDMgMTAuNSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMS41IDM3YzUuNSAzLjUgMTUuNSAzLjUgMjEgMHYtN3M5LTQuNSA2LTEwLjVjLTQtNi41LTEzLjUtMy41LTE2IDRWMjd2LTMuNWMtMy41LTcuNS0xMy0xMC41LTE2LTQtMyA2IDUgMTAgNSAxMHoiLz48cGF0aCBkPSJNMTEuNSAzMGM1LjUtMyAxNS41LTMgMjEgMG0tMjEgMy41YzUuNS0zIDE1LjUtMyAyMSAwbS0yMSAzLjVjNS41LTMgMTUuNS0zIDIxIDAiLz48L2c+PC9zdmc+)}
 .pwQ{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjQ1IiB2aWV3Qm94PSIwIDAgNDUgNDUiPjxnIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBkPSJNOCAxMmEyIDIgMCAxIDEtNCAwIDIgMiAwIDEgMSA0IDBtMTYuNS00LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTQxIDEyYTIgMiAwIDEgMS00IDAgMiAyIDAgMSAxIDQgME0xNiA4LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTMzIDlhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwIi8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzguNS0xLjUgMjEtMS41IDI3IDBsMi0xMi03IDExVjExbC01LjUgMTMuNS0zLTE1LTMgMTUtNS41LTE0VjI1TDcgMTR6Ii8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzAgMiAxLjUgMiAyLjUgNCAxIDEuNSAxIDEgLjUgMy41LTEuNSAxLTEuNSAyLjUtMS41IDIuNS0xLjUgMS41LjUgMi41LjUgMi41IDYuNSAxIDE2LjUgMSAyMyAwIDAgMCAxLjUtMSAwLTIuNSAwIDAgLjUtMS41LTEtMi41LS41LTIuNS0uNS0yIC41LTMuNSAxLTIgMi41LTIgMi41LTQtOC41LTEuNS0xOC41LTEuNS0yNyAweiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0xMS41IDMwYzMuNS0xIDE4LjUtMSAyMiAwTTEyIDMzLjVjNi0xIDE1LTEgMjEgMCIvPjwvZz48L3N2Zz4=)}
@@ -5711,4 +5726,72 @@ acadTile({id:'trap',ic:'🪤',name:'Opening Trap Museum',sub:()=>`${TRAPS.filter
  const w=$('walkCard'),first=s.querySelector('.card');w?w.insertAdjacentHTML('afterend',h):first?first.insertAdjacentHTML('afterend',h):s.insertAdjacentHTML('beforeend',h)}}
 window.CC_BUILD='R34';
 {const _rs34=renderSettings;renderSettings=function(){_rs34();const l=$('buildLabel');if(l)l.textContent='Chess Cities · build R34'}}
+// ================= v14data R35: Knight Maze levels (generated and verified by /workspace/cc35/gen.py, breadth-first search) =================
+const MAZES=[{"n":"e3","p":["f6"],"par":2},{"n":"b6","p":["f7"],"par":3},{"n":"h2","p":["d7"],"par":3},{"n":"f3","p":["d7","h2"],"par":4},{"n":"f8","p":["a3","b5"],"par":4},{"n":"f1","p":["c2","h4"],"par":5},{"n":"c8","p":["e7","f5","h2"],"par":5},{"n":"a8","p":["c3","c7","h7"],"par":6},{"n":"a6","p":["c2","c4","g6"],"par":6},{"n":"f6","p":["a6","c7","g5","h6"],"par":7},{"n":"g8","p":["b7","c4","e5","h5"],"par":8},{"n":"e2","p":["b5","f4","f5","g4","h3"],"par":9}];
+// ================= v14 R35: Visualization Gym — Knight Maze =================
+// Save-compatible: results live in ST.acad.viz.maze = {d,st:[0|1|2 per level],runs} inside cc2_state. Written only when a maze is finished; no new keys.
+// Shadow mode: nothing here touches stamps, stars, SRS, accuracy, the gate or assessment. XP is live, as in the other trainers.
+// Rules: the white knight must capture every black pawn in as few hops as possible. It may never land on a square a remaining pawn guards
+// (Black pawns capture one square diagonally down the board), so a pawn protected by another pawn can't be taken until its guard is gone.
+let MZ=null;
+const mzRec=()=>((ST.acad&&ST.acad.viz&&ST.acad.viz.maze)||null);
+const mzStars=i=>((mzRec()||{}).st||[])[i]||0;
+const mzOpen=i=>i===0||mzStars(i-1)>0;
+const mzSolved=()=>MAZES.filter((_,i)=>mzStars(i)>0).length;
+function mzSq(s){return[s.charCodeAt(0)-97,+s[1]-1]}
+function mzNm(x,y){return 'abcdefgh'[x]+(y+1)}
+function mzHops(s){const[x,y]=mzSq(s),o=[];for(const[dx,dy]of[[1,2],[2,1],[-1,2],[-2,1],[1,-2],[2,-1],[-1,-2],[-2,-1]]){const a=x+dx,b=y+dy;if(a>=0&&a<8&&b>=0&&b<8)o.push(mzNm(a,b))}return o}
+function mzAtt(p){const[x,y]=mzSq(p),o=[];for(const d of[-1,1]){const a=x+d;if(a>=0&&a<8&&y>0)o.push(mzNm(a,y-1))}return o}
+function mzGuard(rem){const g={};rem.forEach(p=>mzAtt(p).forEach(s=>{(g[s]=g[s]||[]).push(p)}));return g}
+// breadth-first search over (knight square, pawns left): returns an optimal route from this state
+function mzSolve(n,rem){const key=(s,r)=>s+'|'+[...r].sort().join(','),st=key(n,rem),D={[st]:null},q=[[n,rem.slice()]];
+ for(let h=0;h<q.length;h++){const[s,r]=q[h];if(!r.length){const path=[];let k=key(s,r);while(D[k]){path.push(D[k].to);k=D[k].from}return path.reverse()}
+  const g=mzGuard(r);for(const t of mzHops(s)){if(g[t])continue;const nr=r.filter(p=>p!==t),k=key(t,nr);if(!(k in D)){D[k]={from:key(s,r),to:t};q.push([t,nr])}}}return null}
+function openMazes(){engineCancel&&engineCancel();MZ=null;setActivity('viz:maze');const n=mzSolved();
+ $('s-ex').innerHTML=`<button class="back" onclick="openViz()">← Gym</button><h2 class="h1">🐴 Knight Maze <span class="newtag">New</span></h2>
+ <p class="sub">Capture every black pawn with your knight in as few hops as possible. <b>Never land on a square a pawn guards.</b> Black pawns capture one square diagonally down the board, so a pawn that another pawn protects can only be taken once its guard is gone. <b>Par</b> is the fewest hops possible, worked out by the app. Solved: <b>${n}/${MAZES.length}</b>.</p>
+ <div class="mz-grid">${MAZES.map((m,i)=>{const s=mzStars(i),o=mzOpen(i);return `<button class="card mz-lv${s?' done':''}" id="mzl${i}" ${o?'':'disabled'} onclick="startMaze(${i})" aria-label="Maze ${i+1}, ${m.p.length} pawn${m.p.length>1?'s':''}, par ${m.par}${s===2?', solved at par':s?', solved':o?'':', locked'}"><b>${o?'Maze '+(i+1):'🔒 Maze '+(i+1)}</b><span class="sub">${m.p.length} pawn${m.p.length>1?'s':''} · par ${m.par}</span><span class="mz-st">${s===2?'★★ at par':s?'★ solved':o?'Not yet':'Solve the one before'}</span></button>`}).join('')}</div>
+ <div class="card sub mz-note">♞ <b>A little history.</b> The knight's odd L-shaped hop has puzzled people for over a thousand years. In the 9th century the Sanskrit poet Rudrata wrote a verse that can be read by following a knight's path across a board, Leonhard Euler studied the knight's tour (visiting every square once) in 1759, and in game 6 of the 2010 World Championship Viswanathan Anand made 13 knight moves in a row. <a href="https://en.wikipedia.org/wiki/Knight%27s_tour" target="_blank" rel="noopener">Source: Wikipedia, "Knight's tour"</a></div>`;
+ show('s-ex');scrollTo(0,0)}
+function startMaze(i){if(!MAZES[i]||!mzOpen(i))return;engineCancel&&engineCancel();setActivity('viz:maze');const m=MAZES[i];
+ MZ={i,m,n:m.n,rem:m.p.slice(),hops:0,hist:[],hints:0,undos:0,miss:0,done:false,show:i<3,warned:false};
+ $('s-ex').innerHTML=`<button class="back" onclick="mzQuit()">← Mazes</button><div class="playwrap"><div><div class="mz-board" style="position:relative"><div class="bwrap" id="vboard"></div><div class="qover" id="qover"></div></div></div><div class="panel"><div class="card"><div class="row" style="justify-content:space-between"><span class="tag">🐴 Knight Maze ${i+1}</span><span class="sub" style="margin:0">par ${m.par}</span></div>
+ <div class="cs-stats"><div><div class="cs-num" id="mzHops">0</div><div class="sub" style="margin:0">hops</div></div><div><div class="cs-num" id="mzLeft">${m.p.length}</div><div class="sub" style="margin:0">pawns left</div></div></div>
+ <div class="msg" id="vmsg" aria-live="polite">Tap a square a knight's hop away. Capture every pawn without landing on a guarded square.</div>
+ <div class="row mz-btns"><button class="btn" id="mzHint" onclick="mzHint()">Hint</button><button class="btn" id="mzUndo" onclick="mzUndo()">Undo</button><button class="btn" id="mzRestart" onclick="startMaze(${i})">Restart</button><button class="btn" id="mzShow" aria-pressed="${MZ.show}" onclick="mzToggle()">${MZ.show?'Hide':'Show'} guarded squares</button></div></div>
+ <div class="card sub" style="font-size:12.5px">Squares marked ✕ are guarded by a pawn. Plan backwards: which pawn has to go first so its neighbour is no longer protected? A hint or an undo still counts as a solve, but only a clean run at par earns ★★.</div></div></div>`;
+ board=new Board($('vboard'),{orient:'w',theme:themeFor(CITIES[0]),human:()=>null});board.locked=true;
+ const ov=$('qover');for(let y=0;y<8;y++)for(let x=0;x<8;x++){const sq=FILES[x]+(8-y);const d=document.createElement('button');d.className='qsq';d.dataset.sq=sq;d.onclick=()=>mzTap(sq);ov.appendChild(d)}
+ mzDraw();show('s-ex');scrollTo(0,0)}
+function mzDraw(last){if(!MZ)return;const c=board.chess;c.clear();c.put({type:'n',color:'w'},MZ.n);MZ.rem.forEach(p=>c.put({type:'p',color:'b'},p));board.last=last||null;if(last)board.anim=last;board.render();
+ const g=mzGuard(MZ.rem),hops=mzHops(MZ.n);document.querySelectorAll('#qover .qsq').forEach(b=>{const s=b.dataset.sq;b.classList.remove('on');b.classList.toggle('mz-g',MZ.show&&!!g[s]);
+  b.setAttribute('aria-label',s+(s===MZ.n?', your knight':MZ.rem.includes(s)?', black pawn':'')+(g[s]?', guarded':'')+(hops.includes(s)?', one hop away':''));b.disabled=MZ.done});
+ $('mzHops').textContent=MZ.hops;$('mzLeft').textContent=MZ.rem.length;$('mzUndo').disabled=!MZ.hist.length||MZ.done;$('mzHint').disabled=MZ.done}
+function mzSay(c,h){const e=$('vmsg');e.className='msg'+(c?' '+c:'');e.innerHTML=h}
+function mzFlash(sq,c){const b=[...document.querySelectorAll('#qover .qsq')].find(e=>e.dataset.sq===sq);if(b){b.classList.add(c);setTimeout(()=>b.classList.remove(c),c==='good'?260:700)}}
+function mzTap(sq){if(!MZ||MZ.done||!$('mzHops'))return false;
+ if(sq===MZ.n){mzSay('','That is your knight. Tap a square one knight\'s hop away.');return false}
+ if(!mzHops(MZ.n).includes(sq)){MZ.miss++;SND.bad();mzFlash(sq,'wrong');mzSay('bad',`✗ A knight can't reach <b class="mono">${sq}</b> from <b class="mono">${MZ.n}</b> in one hop. It moves two squares one way and one square to the side.`);return false}
+ const g=mzGuard(MZ.rem);if(g[sq]){MZ.miss++;SND.bad();mzFlash(sq,'wrong');g[sq].forEach(p=>mzFlash(p,'miss'));mzSay('bad',`✗ <b class="mono">${sq}</b> is guarded by the pawn on <b class="mono">${g[sq].join(' and ')}</b>. The knight would be captured.`);return false}
+ const from=MZ.n,cap=MZ.rem.includes(sq);MZ.hist.push({n:from,rem:MZ.rem.slice()});MZ.n=sq;MZ.rem=MZ.rem.filter(p=>p!==sq);MZ.hops++;SND.ok();mzDraw({from,to:sq});
+ if(!MZ.rem.length){mzFinish();return true}
+ if(MZ.hops>=MZ.m.par&&!MZ.warned){MZ.warned=true;mzSay('',`You've used par (${MZ.m.par}) and pawns are still left. Finish the maze anyway, or press <b>Restart</b> for a ★★ run.`);return true}
+ mzSay(cap?'ok':'',cap?`✓ Pawn on <b class="mono">${sq}</b> captured. ${MZ.rem.length} to go.`:`Knight on <b class="mono">${sq}</b>.`);return true}
+function mzHint(){if(!MZ||MZ.done)return;const r=mzSolve(MZ.n,MZ.rem);if(!r)return;MZ.hints++;const t=r[0];mzDraw();const b=[...document.querySelectorAll('#qover .qsq')].find(e=>e.dataset.sq===t);b&&b.classList.add('on');
+ mzSay('',`Hop to <b class="mono">${t}</b>. From here the fewest hops left is <b>${r.length}</b>.`)}
+function mzUndo(){if(!MZ||MZ.done||!MZ.hist.length)return;const h=MZ.hist.pop();MZ.n=h.n;MZ.rem=h.rem;MZ.hops--;MZ.undos++;mzDraw();mzSay('','Move taken back.')}
+function mzToggle(){if(!MZ)return;MZ.show=!MZ.show;const b=$('mzShow');b.textContent=(MZ.show?'Hide':'Show')+' guarded squares';b.setAttribute('aria-pressed',MZ.show);mzDraw()}
+function mzFinish(){const z=MZ;z.done=true;mzDraw();const i=z.i,m=z.m,clean=z.hops===m.par&&!z.hints&&!z.undos,stars=clean?2:1;
+ const A=acad('viz'),prev=A.maze||{},st=(prev.st||[]).slice();while(st.length<MAZES.length)st.push(0);const before=st[i]||0;st[i]=Math.max(before,stars);
+ A.maze={d:today(),st,runs:(prev.runs||0)+1};save();const xp=stars>before?(stars===2?(before?5:10):5):2;addXP(xp,'knight maze');SND.win();if(clean)confetti(70);
+ const route=mzSolve(m.n,m.p),next=i+1<MAZES.length?i+1:-1;
+ mzSay('ok',`✓ All pawns captured in ${z.hops} hop${z.hops===1?'':'s'}.`);
+ modal(`<div class="big-emoji">🐴</div><h2 class="h1">Maze ${i+1} solved!</h2><p class="sub">${z.hops} hops · par ${m.par} · ${clean?'<b>★★ Perfect, right at par.</b>':z.hops>m.par?'★ Solved. You can do it in fewer hops.':'★ Solved with help. Try it clean for ★★.'} +${xp} XP</p><p class="sub" style="font-size:13px">One route at par: <b class="mono">N${m.n}</b> → ${route.map(s=>`<span class="mono">${m.p.includes(s)?'x':''}${s}</span>`).join(' → ')}</p><div class="row" style="justify-content:center">${next>=0?`<button class="btn pri" id="mzNext" onclick="closeModal();startMaze(${next})">Next maze →</button>`:''}<button class="btn" onclick="closeModal();startMaze(${i})">Again</button><button class="btn${next>=0?'':' pri'}" onclick="closeModal();openMazes()">All mazes</button></div>`)}
+function mzQuit(){MZ=null;openMazes()}
+// Gym card and Academy tile
+{const _ov35=openViz;openViz=function(){MZ=null;_ov35();const g=document.querySelector('#s-ex .acadgrid');if(!g)return;const n=mzSolved();
+ g.insertAdjacentHTML('beforeend',`<div class="card acadtile mz-tile"><div class="aic">🐴</div><div style="flex:1;min-width:0"><b>Knight Maze</b> <span class="newtag">New</span><div class="sub" style="margin:2px 0 6px">Collect every pawn with your knight in the fewest hops, without landing on a guarded square. ${n}/${MAZES.length} mazes solved.</div><div class="row" style="gap:8px"><button class="btn pri" id="mzGo" onclick="openMazes()">Play</button></div></div></div>`)}}
+{const t=ACAD_TILES.find(x=>x.id==='viz');if(t){const _s=t.sub;t.sub=()=>_s()+` · mazes ${mzSolved()}/${MAZES.length}`}}
+window.CC_BUILD='R35';
+{const _rs35=renderSettings;renderSettings=function(){_rs35();const l=$('buildLabel');if(l)l.textContent='Chess Cities · build R35'}}
 </script></body></html>

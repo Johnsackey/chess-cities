@@ -1,0 +1,14 @@
+# Chess Cities — changelog
+
+## R35 (2026-10-21): Visualization Gym — Knight Maze, plus a tap-the-square fix
+- **New Gym drill: 🐴 Knight Maze** (marked New), with 12 mazes that unlock in order. Your white knight must capture every black pawn in as few hops as possible, without ever landing on a square a pawn guards. Black pawns capture one square diagonally down the board, so a pawn protected by another pawn can only be taken once its guard is gone. Mazes grow from 1 pawn (par 2) to 5 pawns (par 9).
+- **Par is exact:** each maze's fewest-hops count was worked out by a breadth-first search in Python (`/workspace/cc35/gen.py`), and the test re-checks it with a separate search inside the app.
+- **Help without spoilers:** a wrong tap explains why (not a knight hop, or guarded by the pawn on g5). Hint lights a square on a fewest-hops route, Undo takes back a hop, and Restart starts over. Guarded squares are marked with ✕ on Mazes 1-3, and a button shows or hides them on any maze. The result card shows one route at par.
+- **Stars and XP:** ★★ for a clean run at par (no hint, no undo), ★ for any other solve. XP is 10 for a first ★★, 5 for a first ★ or an upgrade, and 2 for a repeat. XP is live in shadow mode as before. Nothing here touches stamps, stars, SRS, accuracy, the gate or assessment.
+- **History note** on the maze page: Rudrata's 9th-century knight's-path verse, Euler's 1759 study of the knight's tour, and Anand's 13 knight moves in a row in game 6 of the 2010 World Championship (source: Wikipedia, "Knight's tour").
+- **Bug fix:** on tap-the-square boards (the Blindfold tracker and the Pawn and Plans quiz schools), the keyboard hint under the board stretched the invisible tap layer, so taps on the lower rows could land on the square above (off by up to 36px on a phone and 21px on a desktop). The tap layer now stays exactly board-sized, and the hint is hidden there. The Coordinate Sprint was already correct.
+- **Storage unchanged:** results live in `ST.acad.viz.maze = {d,st,runs}` inside `cc2_state`, written only when a maze is finished. There are no new keys. An R34 save stays byte-identical when you browse the Gym and the mazes, and an R35 save with maze results opens in R34 and keeps them.
+- **Accessibility:** maze levels and all 64 board squares are real buttons with labels (for example "e3, your knight"), messages are aria-live, control buttons are at least 40px tall, and there is no horizontal overflow at 390px or 1280px.
+- **Shadow mode and gate unchanged:** `ST.prefs.shadow !== false` by default; gate stays `passed: false`; R28 freezes intact.
+- The Settings label reads "build R35"; `window.CC_BUILD='R35'`. New files: `v14data.js` and `v14.js` (build order: `… v13data.js v13.js v14data.js v14.js`); CSS appended to `app.css`. New test: `cc-test/t35.js` (11 checks). The Gym-card count in the R32 test copy moves from 4 to 5.
+
