@@ -1,5 +1,18 @@
 # Chess Cities — changelog
 
+## R37 (2026-10-23): Endgame Study Hall — eight famous composed studies
+- **New Academy trainer: 🏛️ Endgame Study Hall** (marked New), with 8 of the most famous composed endgame studies in two sections:
+  - **First studies:** al-Adli's Knight Trap (9th century, from an Arabic manuscript of 1140), the Réti Study (1921, draw), Grigoriev's Triangle (triangulation) and Selezniev's Castle (1921, castling in the endgame).
+  - **Masterpieces:** the Saavedra Position (1895, 6.c8=R!!), Lasker–Reichhelm (1901, corresponding squares), Lazard's Stalemate (1946, draw) and Mitrofanov's Deflection (1967, corrected version, 7.Qg5!!).
+- **Each study has a lesson card**: the diagram, a stipulation badge ("White to play and win" / "draw"), the theme, a spoiler-free introduction, a sourced history note and Wikipedia links. Once a study is solved, the lesson also shows "The idea".
+- **Solve it:** you play the solving side, and the defence is played for you. Every move comes with the why. A miss gives a hint, a second miss shows the move, and "Show me" lights the piece. Famous wrong tries get their own explanation from the source (for example 6.c8=Q? Rc4+! stalemate in the Saavedra, 1.0-0-0? Ra2! in the Selezniev, 7.Ka6? Qe2+ perpetual in the Mitrofanov). Moves that the tablebase says also work are praised without counting as a miss. **Watch the solution** plays the whole line with explanations and saves nothing.
+- **Checked:** every position and line comes from its Wikipedia article (Endgame study, Saavedra position, Réti endgame study, Corresponding squares, Leopold Mitrofanov) and was replayed with python-chess. All 55 solving moves were checked. With 7 pieces or fewer, the Lichess (Syzygy) tablebase confirms that each move keeps the win or the draw. Larger positions were checked with Stockfish at depth 30, and each study move is its top choice. In Lazard's study, Stockfish misjudges the start, as Wikipedia notes, but it confirms that every other White move allows a forced mate or loses heavy material, and the line ends in stalemate. Tools are in `/workspace/cc37`.
+- **XP:** 20 for a first clean solve, 10 with misses, 5 for repeats. XP is live in shadow mode as before. Nothing here touches stamps, stars, SRS, accuracy, the gate or assessment. The Trap Museum tile drops its "New" mark.
+- **Storage unchanged:** results live in `ST.acad.study[id] = {d,best,n}` inside `cc2_state`, created only when a study is finished. There are no new keys. An R36 save writes exactly what R36 writes after browsing the Academy, the Study Hall and the Trap Museum. An R37 save with study results opens in R36 and keeps them.
+- **Accessibility:** study cards are real buttons in the Tab order (Enter opens the lesson), the move log and messages are aria-live, badges are 12px or larger, source links are at least 24px tall, and there is no horizontal overflow at 390px or 1280px.
+- **Shadow mode and gate unchanged:** `ST.prefs.shadow !== false` by default; gate stays `passed: false`; R28 freezes intact.
+- The Settings label reads "build R37"; `window.CC_BUILD='R37'`. New files: `v16data.js`, `v16.js` (build order: `… v15data.js v15.js v16data.js v16.js`); CSS appended to `app.css`. New test: `cc-test/t37.js` (9 checks).
+
 ## R36 (2026-10-22): Motif School — four attacking ideas
 - **Tactics Motif School grows from 16 to 20 motifs.** A new "Attacking ideas" section (marked New) sits under "Core motifs" and "Advanced ideas":
   - **🎯 Attacking f2 / f7**: early in the game only the king guards f7 (f2 for White). Source: Wikipedia "Fried Liver Attack", with a history note: 6.Nxf7 was already played in Polerio vs. Domenico, Rome, about 1610.
