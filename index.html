@@ -381,6 +381,34 @@ main{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
 .st37note{font-size:12.5px;margin-top:12px}
 .st37idea{margin:10px auto;max-width:560px}
 @media(max-width:520px){.st37plate .stip37{white-space:normal}}
+/* R38 Academy wings + keyboard pass */
+.at38top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:14px}
+.at38sum,.at38next{display:flex;align-items:center;gap:14px;margin:0;min-width:0}
+.at38b{min-width:0;flex:1}
+.at38ring{width:64px;height:64px;flex:none}.at38ring>div{width:50px;height:50px;font-size:13px}
+.at38next{cursor:pointer;background:linear-gradient(135deg,rgba(245,185,66,.14),rgba(124,92,255,.08));border-color:rgba(245,185,66,.35);transition:transform .15s,box-shadow .15s}
+.at38next:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.at38next.all{cursor:default;background:linear-gradient(135deg,rgba(47,210,122,.14),rgba(255,255,255,.02));border-color:rgba(47,210,122,.35)}
+.at38next .btn{flex:none}
+.at38k{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
+.at38next.all .at38k{color:var(--ok)}
+.at38wing{margin-top:22px}
+.at38wh{display:flex;align-items:baseline;gap:10px;justify-content:space-between}
+.at38wh h3{font-family:var(--serif);font-size:20px;font-weight:700;letter-spacing:.2px}
+.at38wp{font-size:12.5px;font-weight:700;color:var(--mut);background:#ffffff0d;border:1px solid var(--line);border-radius:999px;padding:2px 10px;white-space:nowrap}
+.at38ws{margin:2px 0 0;font-size:13px;max-width:72ch}
+.at38bar{height:6px;background:#ffffff14;border-radius:9px;overflow:hidden;margin-top:8px}
+.at38bar i{display:block;height:100%;min-width:0;background:linear-gradient(90deg,var(--acc),#ff7aa8);border-radius:9px;transition:width .6s}
+.at38.done .at38bar i{background:linear-gradient(90deg,var(--ok),#7fe8b0)}
+.at38.done{box-shadow:inset 3px 0 0 var(--ok,#5fd38d)}
+.at38ok{color:var(--ok);font-size:13px;margin-left:2px}
+.at38chip{display:inline-block;margin-top:7px;font-size:12px;font-weight:700;color:#8cc8ff;background:rgba(140,200,255,.1);border:1px solid rgba(140,200,255,.3);border-radius:999px;padding:1px 9px}
+.at38 .aic{flex:none}
+.acadtile:focus-visible,.at38next:focus-visible,.kb38:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+@media(max-width:640px){.at38top{grid-template-columns:minmax(0,1fr)}.at38wing{margin-top:18px}.at38wh h3{font-size:18px}.at38sum .sub{font-size:12.5px}}
+.at38{position:relative}
+.at38 .at38ok{position:absolute;top:8px;right:10px;font-size:12px;font-weight:800;color:var(--ok);background:rgba(47,210,122,.12);border:1px solid rgba(47,210,122,.35);border-radius:999px;padding:0 8px;line-height:18px;margin:0}
+.at38.done .at38b>b{display:block;padding-right:86px}
 </style>
 <style id="piecescss">.pwK{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgdmlld0JveD0iMCAwIDQ1IDQ1Ij48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNSI+PHBhdGggc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMTEuNjNWNk0yMCA4aDUiLz48cGF0aCBmaWxsPSIjZmZmIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgZD0iTTIyLjUgMjVzNC41LTcuNSAzLTEwLjVjMCAwLTEtMi41LTMtMi41cy0zIDIuNS0zIDIuNWMtMS41IDMgMyAxMC41IDMgMTAuNSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMS41IDM3YzUuNSAzLjUgMTUuNSAzLjUgMjEgMHYtN3M5LTQuNSA2LTEwLjVjLTQtNi41LTEzLjUtMy41LTE2IDRWMjd2LTMuNWMtMy41LTcuNS0xMy0xMC41LTE2LTQtMyA2IDUgMTAgNSAxMHoiLz48cGF0aCBkPSJNMTEuNSAzMGM1LjUtMyAxNS41LTMgMjEgMG0tMjEgMy41YzUuNS0zIDE1LjUtMyAyMSAwbS0yMSAzLjVjNS41LTMgMTUuNS0zIDIxIDAiLz48L2c+PC9zdmc+)}
 .pwQ{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHN0eWxlPSJjb2xvci1zY2hlbWU6bGlnaHQgb25seSIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjQ1IiB2aWV3Qm94PSIwIDAgNDUgNDUiPjxnIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBkPSJNOCAxMmEyIDIgMCAxIDEtNCAwIDIgMiAwIDEgMSA0IDBtMTYuNS00LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTQxIDEyYTIgMiAwIDEgMS00IDAgMiAyIDAgMSAxIDQgME0xNiA4LjVhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwTTMzIDlhMiAyIDAgMSAxLTQgMCAyIDIgMCAxIDEgNCAwIi8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzguNS0xLjUgMjEtMS41IDI3IDBsMi0xMi03IDExVjExbC01LjUgMTMuNS0zLTE1LTMgMTUtNS41LTE0VjI1TDcgMTR6Ii8+PHBhdGggc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIGQ9Ik05IDI2YzAgMiAxLjUgMiAyLjUgNCAxIDEuNSAxIDEgLjUgMy41LTEuNSAxLTEuNSAyLjUtMS41IDIuNS0xLjUgMS41LjUgMi41LjUgMi41IDYuNSAxIDE2LjUgMSAyMyAwIDAgMCAxLjUtMSAwLTIuNSAwIDAgLjUtMS41LTEtMi41LS41LTIuNS0uNS0yIC41LTMuNSAxLTIgMi41LTIgMi41LTQtOC41LTEuNS0xOC41LTEuNS0yNyAweiIvPjxwYXRoIGZpbGw9Im5vbmUiIGQ9Ik0xMS41IDMwYzMuNS0xIDE4LjUtMSAyMiAwTTEyIDMzLjVjNi0xIDE1LTEgMjEgMCIvPjwvZz48L3N2Zz4=)}
@@ -5900,4 +5928,65 @@ acadTile({id:'study',ic:'🏛️',name:'Endgame Study Hall',sub:()=>`${STUDIES.f
 {const t=ACAD_TILES.find(x=>x.id==='trap');if(t){const _s=t.sub;t.sub=()=>_s().replace(/ · New$/,'')}}
 window.CC_BUILD='R37';
 {const _rs37=renderSettings;renderSettings=function(){_rs37();const l=$('buildLabel');if(l)l.textContent='Chess Cities · build R37'}}
+// ================= v17 R38 data: Academy wings =================
+// The Academy hub is grouped into six wings, from story and tactics to endgames and strategy.
+// Display only: progress is read from the same fields the tile subtitles already read. Nothing here is saved.
+const ACAD_WINGS=[
+ {id:'story',ic:'📖',name:'Start with the story',sub:'A guided tour of chess history, one chapter at a time.',tiles:['camp']},
+ {id:'tac',ic:'⚔️',name:'Tactics & checkmates',sub:'Learn the mating nets and tactical tricks, then count every check and capture.',tiles:['pat','mot','calc']},
+ {id:'open',ic:'🧭',name:'Openings',sub:'Play each city\'s main line with the why, and learn the traps to spring and to dodge.',tiles:['walk','trap']},
+ {id:'end',ic:'🪜',name:'Endgames',sub:'Climb from the basic mates to the famous composed studies.',tiles:['lad','study']},
+ {id:'strat',ic:'🏰',name:'Strategy & master games',sub:'Pawn structures, middlegame plans, and guessing the moves of the greats.',tiles:['pawn','plans','gtm']},
+ {id:'gym',ic:'👁️',name:'Training gym',sub:'Board-vision drills and lessons from your own games. Practise any time.',tiles:['viz','mist']}];
+// Suggested order for "Suggested next": the first trainer on this path that is not finished yet.
+const ACAD_PATH=['camp','pat','mot','walk','trap','lad','calc','pawn','plans','study','gtm'];
+// [done,total] per trainer, with the same rules as each tile's subtitle. Open-ended trainers (viz, mist) have no bar.
+// calc is a best score (out of 10), so it gets a bar but is left out of the Academy-wide milestone count.
+const ACAD_PROG={
+ camp:()=>[CAMP.filter((_,i)=>acad('camp')['c'+i]).length,CAMP.length],
+ pat:()=>[PATS.filter(p=>patStars(p[0])>=2).length,PATS.length],
+ mot:()=>[MOTS.filter(m=>schStars('mot',m[0])>=2).length,MOTS.length],
+ calc:()=>[Math.min(10,(acad('calc').cc||{}).best||0),10],
+ walk:()=>[Object.keys(acad('walk')).filter(k=>k in WALK).length,Object.keys(WALK).length],
+ trap:()=>[TRAPS.filter(t=>trapRecs()[t.id]).length,TRAPS.length],
+ lad:()=>[LADDER.filter(l=>ladDone(l[0])).length,LADDER.length],
+ study:()=>[STUDIES.filter(s=>studyRecs()[s.id]).length,STUDIES.length],
+ pawn:()=>[QZ.pawn.rows.filter(r=>((acad('pawn')[r[0]]||{}).best||0)>=4).length,QZ.pawn.rows.length],
+ plans:()=>[QZ.plans.rows.filter(r=>((acad('plans')[r[0]]||{}).best||0)>=4).length,QZ.plans.rows.length],
+ gtm:()=>[GKEYS.filter(k=>((acad('gtm')[k]||{}).best||0)>0).length,GKEYS.length]};
+const ACAD_NOCOUNT={calc:1};
+// ================= v17 R38: Academy wings + keyboard pass =================
+// 1) The Academy hub groups its 13 trainers into six wings, with a progress bar on every trainer, an Academy-wide
+//    progress ring and a "Suggested next" card. Display only: no new storage keys or fields.
+// 2) Keyboard pass: every clickable card that was a plain <div onclick> (Academy tiles, Gym tiles, Pattern Academy
+//    and Pawn/Plans cards, Guided-lesson cities, map teasers, Today's plan and Campaign tasks) becomes a real button
+//    for keyboards and screen readers (role="button", Tab stop, Enter/Space opens it, visible focus ring).
+function acadProg(id){const f=ACAD_PROG[id];if(!f)return null;try{const r=f();return r&&r[1]>0?[Math.min(r[0],r[1]),r[1]]:null}catch(e){return null}}
+function acadTile38(t,p,sub){const pct=p?Math.round(100*p[0]/p[1]):0,done=!!p&&p[0]>=p[1];
+ return `<div class="card acadtile at38${done?' done':''}" id="at-${t.id}" role="button" tabindex="0" onclick="${t.go}"><div class="aic">${t.ic}</div><div class="at38b"><b>${esc(t.name)}</b>${done?'<span class="at38ok">✓ Complete</span>':''}<div class="sub" style="margin:2px 0 0">${sub}</div>${p?`<div class="at38bar" aria-hidden="true"><i style="width:${pct}%"></i></div>`:`<div class="at38chip">Practise any time</div>`}</div></div>`}
+function openAcademy(){engineCancel&&engineCancel();setActivity('academy');
+ // Read every subtitle first, in exactly R37's order (Campaign first), so a save gains its empty Academy sections in the
+ // same order as before and stays byte-identical to what R37 writes. Progress bars then only read existing sections.
+ const SUB={};[...ACAD_TILES].sort((a,b)=>(b.id==="camp")-(a.id==="camp")).forEach(t=>SUB[t.id]=t.sub());
+ const byId={};ACAD_TILES.forEach(t=>byId[t.id]=t);const P={};ACAD_TILES.forEach(t=>P[t.id]=acadProg(t.id));
+ const wings=ACAD_WINGS.map(w=>Object.assign({},w,{tiles:w.tiles.filter(id=>byId[id])}));
+ const placed=new Set(wings.flatMap(w=>w.tiles));const extra=ACAD_TILES.filter(t=>!placed.has(t.id)).map(t=>t.id);
+ if(extra.length)wings.push({id:'more',ic:'✨',name:'More trainers',sub:'',tiles:extra});
+ let D=0,T=0;ACAD_TILES.forEach(t=>{const p=P[t.id];if(p&&!ACAD_NOCOUNT[t.id]){D+=p[0];T+=p[1]}});const pct=T?Math.round(100*D/T):0;
+ const nx=ACAD_PATH.map(id=>byId[id]).find(t=>t&&P[t.id]&&P[t.id][0]<P[t.id][1]);
+ const next=nx?`<div class="card at38next" id="acadNext" role="button" tabindex="0" onclick="${nx.go}"><div class="aic">${nx.ic}</div><div class="at38b"><div class="at38k">Suggested next</div><b>${esc(nx.name)}</b><div class="sub" style="margin:2px 0 0">${SUB[nx.id]}</div></div><span class="btn sm pri" aria-hidden="true">Go →</span></div>`
+  :`<div class="card at38next all" id="acadNext"><div class="aic">🏆</div><div class="at38b"><div class="at38k">Every lesson track finished</div><b>Replay any trainer to keep sharp</b></div></div>`;
+ $('s-ex').innerHTML=`<button class="back" onclick="go('s-map')">← World map</button><h2 class="h1">🎓 The Academy</h2><p class="sub">Deep lessons and creative trainers that sit alongside the cities. Pick one — 10 focused minutes counts for your streak.</p>
+ <div class="at38top"><div class="card at38sum" id="acadSum"><div class="ring at38ring" style="--p:${pct}" aria-hidden="true"><div>${pct}%</div></div><div class="at38b"><b>${D} of ${T} milestones</b><div class="sub" style="margin:2px 0 0">${ACAD_TILES.length} trainers in ${wings.length} wings. Learn patterns, walk lessons, spring traps and solve studies to fill the ring.</div></div></div>${next}</div>
+ ${wings.map(w=>{const ps=w.tiles.map(id=>P[id]).filter((p,i)=>p&&!ACAD_NOCOUNT[w.tiles[i]]);const d=ps.reduce((a,p)=>a+p[0],0),t=ps.reduce((a,p)=>a+p[1],0);
+  return `<section class="at38wing" id="aw-${w.id}" aria-labelledby="awh-${w.id}"><div class="at38wh"><h3 id="awh-${w.id}">${w.ic} ${esc(w.name)}</h3>${t?`<span class="at38wp">${d}/${t}</span>`:''}</div>${w.sub?`<p class="sub at38ws">${esc(w.sub)}</p>`:''}<div class="acadgrid">${w.tiles.map(id=>acadTile38(byId[id],P[id],SUB[id])).join('')}</div></section>`}).join('')}`;
+ show('s-ex');scrollTo(0,0)}
+// ---- keyboard pass ----
+const KB38_SKIP=/^(BUTTON|A|INPUT|SELECT|TEXTAREA|LABEL|SUMMARY|OPTION|BODY|HTML)$/;
+function kb38(root){(root||document).querySelectorAll('[onclick]').forEach(e=>{if(KB38_SKIP.test(e.tagName)||e.hasAttribute('role')||e.hasAttribute('tabindex'))return;if(!(e.getAttribute('onclick')||'').trim())return;e.setAttribute('role','button');e.tabIndex=0;e.classList.add('kb38')})}
+document.addEventListener('keydown',e=>{const t=e.target;if(!t||!t.classList||e.altKey||e.ctrlKey||e.metaKey)return;if(!(t.classList.contains('kb38')||t.classList.contains('at38')||t.id==='acadNext'))return;if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){e.preventDefault();t.click()}});
+{let q=false;const run=()=>{q=false;kb38()};new MutationObserver(()=>{if(q)return;q=true;queueMicrotask(run)}).observe(document.body,{childList:true,subtree:true});kb38()}
+// The Endgame Study Hall stays the newest trainer, so its "New" mark stays.
+window.CC_BUILD='R38';
+{const _rs38=renderSettings;renderSettings=function(){_rs38();const l=$('buildLabel');if(l)l.textContent='Chess Cities · build R38'}}
 </script></body></html>
